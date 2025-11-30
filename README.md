@@ -31,7 +31,7 @@ ReIG2/twinRIG is a quantum-mechanical model of self-referential cognition and wo
 
 **Title**: ReIG2/twinRIG: A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction
 
-**Author**: Mechanic-Y / 脇田　泰行
+**Author**: Mechanic-Y / Yasyuki Wakita
 
 **Abstract**: We present a mathematically rigorous reformulation addressing all major criticisms of the original framework...
 
@@ -213,7 +213,7 @@ with exponential rate `C|λ₂|^N`.
 ```bibtex
 @article{wakita2025reig2,
   title={ReIG2/twinRIG: A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction},
-  author={脇田　泰行},
+  author={Yasuyuki Wakita},
   journal={GitHub Pages},
   year={2025},
   note={Revised Edition},
@@ -255,7 +255,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## 📧 Contact
 
-- **Author**: Mechanic-Y / 脇田　泰行
+- **Author**: Mechanic-Y / Yasuyuki Wakita
 - **GitHub**: [@mechanic-y](https://github.com/mechanic-y)
 - **Email**: (Add if desired)
 - **Original Site**: [ReIG2-twinRIG-Core](https://mechanic-y.github.io/ReIG2-twinRIG-Core/)
