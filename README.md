@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![ChatGPT](https://img.shields.io/badge/ChatGPT-Try_ReIG2_V3-74aa9c?style=flat&logo=openai&logoColor=white)](https://chatgpt.com/g/g-692f1438157c8191bf1c42a29d89deac-reig2-v3-world-tensor-thinking-partner-edition)
+[![Gemini](https://img.shields.io/badge/Gemini-Try_twinRIG_V2-8E75B2?style=flat&logo=google&logoColor=white)](https://gemini.google.com/gem/1My8RjmjY-yviP4RpUyDh0iYpBRawyTNJ?usp=sharing)
 
 > **A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction**
 
@@ -28,6 +30,20 @@ ReIG2/twinRIG is a comprehensive quantum-mechanical framework for modeling self-
 
 ---
 
+## 🤖 Interactive AI Models
+
+Experience the theory in action through our customized AI models.
+
+| Model Name | Platform | Description | Link |
+|------------|----------|-------------|------|
+| **ReIG2 V3** | ChatGPT | **Thinking Partner Edition.** Best for deep dialogue & World Tensor integration. | [🚀 Try ReIG2 V3](https://chatgpt.com/g/g-692f1438157c8191bf1c42a29d89deac-reig2-v3-world-tensor-thinking-partner-edition) |
+| **twinRIG V2** | Gemini | **Latest Implementation.** Based on Gemini 1.5 Pro. | [💎 Try twinRIG V2](https://gemini.google.com/gem/1My8RjmjY-yviP4RpUyDh0iYpBRawyTNJ?usp=sharing) |
+| **ReIG2-Sync** | ChatGPT | Synchronized processing specialized model. | [🔄 Try Sync](https://chatgpt.com/g/g-6912ba09a2c0819191f4a41b3d02b001-reig2-sync) |
+| **twinRIG-Sync** | Gemini | Experimental sync prototype (V0.9). | [🔄 Try Sync](https://gemini.google.com/gem/1zGEhtasyaZ5kDiCW8iOadi8sZfli1NOs?usp=sharing) |
+| **ReIG2 V2.2.3b** | ChatGPT | Standard stable version (Japanese/Multi-lingual). | [🧪 Try V2.2.3b](https://chatgpt.com/g/g-68eb52014bb88191bf104f940ea8dcac-reig2-v2-2-3b-ri-ben-yu-zhong-he-duo-yan-yu-dui-ying) |
+
+---
+
 ## 📄 Publications
 
 ### Latest: December 2025 Comprehensive Edition
@@ -36,7 +52,7 @@ ReIG2/twinRIG is a comprehensive quantum-mechanical framework for modeling self-
 
 **Author**: Mechanic-Y / Yasuyuki Wakita
 
-**Abstract**: This paper presents ReIG2/twinRIG, an integrated theoretical framework that progressively develops from standard quantum mechanical time evolution operators to extended time evolution operators, multidimensional time evolution operators, and phase transition generation operators.
+**Abstract**: This paper presents the complete ReIG2/twinRIG framework, progressively developing from standard quantum mechanical time evolution operators to extended time evolution operators (Section 2), multidimensional time evolution with four temporal axes (Section 3), phase transition generation operators G = P ∘ E ∘ R (Section 4), and the unified World Generation Tensor System with self-referential fixed points (Section 5). Includes complete V1/V2 implementations and numerical simulations.
 
 📄 **[Download PDF](papers/ReIG2_twinRIG_2025_December.pdf)**
 
