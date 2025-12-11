@@ -1,0 +1,21 @@
+# ReIG2/twinRIG Python Dependencies
+# =================================
+
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Optional: Quantum computing (for hardware implementation)
+# qiskit>=0.45.0
+# qiskit-aer>=0.13.0
+
+# Optional: Advanced numerical methods
+# numba>=0.57.0  # JIT compilation for performance
+
+# Development
+# pytest>=7.0.0
+# black>=23.0.0
+# mypy>=1.0.0
