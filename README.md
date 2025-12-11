@@ -1,10 +1,9 @@
 # ReIG2/twinRIG Research
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/abs/xxxx.xxxxx)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-> A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction
+> **A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction**
 
 **🌐 Website**: [https://mechanic-y.github.io/ReIG2-Research/](https://mechanic-y.github.io/ReIG2-Research/)
 
@@ -12,276 +11,250 @@
 
 ## 📖 Overview
 
-ReIG2/twinRIG is a quantum-mechanical model of self-referential cognition and world construction. This repository contains the complete implementation, documentation, and supplementary materials for the revised edition (2025).
+ReIG2/twinRIG is a comprehensive quantum-mechanical framework for modeling self-referential cognition and world construction. The theory progresses through four stages:
 
-### Key Features
+1. **Extended Time Evolution Operator** - Adding future possibility, fluctuation, and ethics to quantum mechanics
+2. **Multi-dimensional Time Evolution** - Multiple time axes (physical, cultural, social, personal)
+3. **Phase Transition Generation Operator** - Discrete state transitions and emergence
+4. **World Generation Tensor System** - Unified framework with self-referential fixed points
+
+### Key Mathematical Features
 
 - ✅ **Fock Space Formalism**: Proper treatment of infinite-dimensional Hilbert spaces
 - ✅ **Banach Fixed Point Theorem**: Rigorous proof of convergence with contraction κ < 1
-- ✅ **Trotter Decomposition**: Explicit handling of non-commutativity
+- ✅ **Trotter-Suzuki Decomposition**: Explicit handling of non-commutative operators
 - ✅ **Non-Unitary Processes**: Kraus operators, Lindblad master equations
-- ✅ **Complete Simulations**: Python implementations with visualization
-- ✅ **Quantum Circuits**: Qiskit-compatible implementations for real hardware
+- ✅ **Multi-Axis Non-Commutative Time**: Four temporal dimensions with ||[G^(i), G^(j)]|| > 0
 
 ---
 
 ## 📄 Publications
 
-### Latest: Revised Edition (2025.11.29)
+### Latest: December 2025 Comprehensive Edition
 
-**Title**: ReIG2/twinRIG: A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction
+**Title**: ReIG2/twinRIG: 包括的フレームワーク — 時間発展から相転移生成へ
 
-**Author**: Mechanic-Y / Yasyuki Wakita
+**Author**: Mechanic-Y / Yasuyuki Wakita
 
-**Abstract**: We present a mathematically rigorous reformulation addressing all major criticisms of the original framework...
+**Abstract**: This paper presents ReIG2/twinRIG, an integrated theoretical framework that progressively develops from standard quantum mechanical time evolution operators to extended time evolution operators, multidimensional time evolution operators, and phase transition generation operators.
 
-**Links**:
-- [📄 PDF](papers/reig2_revised_2025.pdf)
-- [🎤 Slides](slides/reig2_presentation.pdf)
-- [📊 arXiv](https://arxiv.org/abs/xxxx.xxxxx) (Coming Soon)
+📄 **[Download PDF](papers/ReIG2_twinRIG_2025_December.pdf)**
+
+---
+
+## 🏗️ Project Structure
+
+```
+ReIG2-Research/
+├── papers/
+│   └── ReIG2_twinRIG_2025_December.pdf    # Main paper (December 2025)
+├── code/
+│   ├── v1/                                 # Dense matrix implementation
+│   │   ├── engine.py                       # Quantum state & evolution
+│   │   ├── operators.py                    # Hamiltonians & phase operators
+│   │   └── demo.py                         # V1 demonstration
+│   └── v2/                                 # Sparse matrix implementation
+│       ├── engine_v2.py                    # Scalable sparse engine
+│       ├── operators_v2.py                 # Sparse operators
+│       └── demo_v2.py                      # V2 demonstration
+├── docs/
+│   └── v3/                                 # V3 AI Partner Framework
+│       ├── 01_V3_Architecture.md           # System architecture
+│       ├── 02_WorldTensor_Core.md          # World tensor core
+│       ├── 03_ReIG2_V3_Interaction_Model.md
+│       ├── 04_V1V2_Safety_Guide.md
+│       ├── 05_V3_Response_Framework.md
+│       ├── 06_V3_Examples_and_Patterns.md
+│       └── 07_V3_Limitations_and_Policies.md
+└── README.md
+```
 
 ---
 
 ## 🚀 Quick Start
 
-### Installation
+### Requirements
 
 ```bash
-git clone https://github.com/mechanic-y/ReIG2-Research.git
-cd ReIG2-Research
-pip install -r requirements.txt
+pip install numpy scipy matplotlib
 ```
 
-### Run Simulations
+### Run V1 Demo (Dense Implementation)
 
 ```bash
-# Complete 3-qubit simulation
-python code/reig2_full_simulation.py
-
-# Non-unitary dynamics
-python code/non_unitary_quantum.py
-
-# Generate paper figures
-python code/figure_generation.py
+cd code/v1
+python demo.py
 ```
+
+**V1 Features**:
+- Dense matrix operations
+- Suitable for dimensions ≤ 1,000
+- Clear, educational implementation
+- Full Hamiltonian construction
+
+### Run V2 Demo (Sparse Implementation)
+
+```bash
+cd code/v2
+python demo_v2.py
+```
+
+**V2 Features**:
+- Sparse matrix operations (CSR format)
+- Scales to 30,000+ dimensions
+- Multi-axis time evolution
+- Krylov subspace methods
+- 100-900x memory compression
 
 ---
 
-## 📊 Key Results
+## 📐 Mathematical Framework
 
-| Metric | Value | Description |
-|--------|-------|-------------|
-| O_M(N=100) | 0.951 → 1 | Meaning observable convergence |
-| L(world) | 0.012 → 0 | World distance (exponential decay) |
-| Contraction κ | < 1 | Proven rigorously via Banach theorem |
-| Convergence Rate | ~0.95^N | Exponential with spectral gap |
+### Extended Time Evolution Operator (Section 2)
 
----
-
-## 📁 Repository Structure
-
+Standard quantum mechanics:
 ```
-ReIG2-Research/
-├── papers/
-│   ├── reig2_revised_2025.pdf      # Main paper (21 pages)
-│   ├── reig2_original.pdf          # Original paper
-|   └── ReIG2_twinRIG.pdf           # Comprehensive Framework - Japanese Version
-├── slides/
-│   └── reig2_presentation.pdf      # Beamer presentation
-├── code/
-│   ├── non_unitary_quantum.py      # Kraus, Lindblad implementations
-│   ├── reig2_full_simulation.py    # Complete 3-qubit system
-│   ├── quantum_circuit_implementation.py  # Qiskit circuits
-│   └── figure_generation.py        # Reproducible visualizations
-├── images/
-│   ├── fig1_system_architecture.png
-│   ├── fig2_convergence.png
-│   ├── fig3_nonunitary.png
-│   ├── fig4_circuit.png
-│   └── fig5_functor.png
-├── docs/
-│   ├── mathematical_proofs.md      # Detailed theorem proofs
-│   ├── implementation_notes.md     # Code documentation
-│   └── hardware_requirements.md    # Quantum hardware specs
-├── requirements.txt                # Python dependencies
-├── LICENSE                         # MIT License
-└── README.md                       # This file
+U(t) = exp(-iHt/ℏ)
 ```
 
----
+Extended with three resonance parameters:
+```
+Û_res(t; τ, ε, PFH) = exp(-iĤ(t, τ, ε, PFH)/ℏ)
 
-## 💻 Code Examples
-
-### Example 1: Non-Unitary Evolution
-
-```python
-from non_unitary_quantum import dephasing_channel, amplitude_damping
-import numpy as np
-
-# Initial state
-rho = np.array([[0.5, 0.5], [0.5, 0.5]])  # |+⟩⟨+|
-
-# Apply decoherence
-gamma = 0.1
-rho_dephased = dephasing_channel(rho, gamma)
-
-print(f"Coherence decay: {np.abs(rho_dephased[0,1]):.4f}")
+Ĥ = H₀ + τH_future + εH_entropy + PFH·H_ethics
 ```
 
-### Example 2: Quantum Circuit
+### Multi-dimensional Time (Section 3)
 
-```python
-from quantum_circuit_implementation import ReIG2Circuit
-
-# Initialize 3-qubit system
-circuit = ReIG2Circuit(omega_M=1.0, omega_C=0.7, omega_O=0.5)
-
-# Build and execute
-qc = circuit.build_full_circuit(N=10, dt=0.1)
+Multiple time axes with weight functions:
+```
+Û_multi = exp(-i Σₖ Ĥₖ fₖ(τ, ε, PFH) / ℏ)
 ```
 
----
+Where:
+- k=0: Physical time
+- k=1: Cultural time
+- k=2: Social time
+- k=3: Personal time
 
-## 🔬 Theoretical Background
+Non-commutativity: ||[Ĥₖ, Ĥₖ']|| > 0
 
-### Fock Space Formulation
+### Phase Transition Operator (Section 4)
 
+Discrete state transitions:
 ```
-ℱ = ⊕_{n=0}^∞ H_rec^⊗n = ℂ ⊕ H_rec ⊕ (H_rec ⊗ H_rec) ⊕ ...
+G = P ∘ E ∘ R
+
+R: Torsion (rotation)
+E: Expansion
+P: Phase jump
 ```
 
-Inner product: `⟨Ψ|Φ⟩_ℱ = Σ_{n=0}^∞ ⟨ψ_n|φ_n⟩`
+### World Construction Operator (Section 5)
 
-### Fixed Point Theorem
+Complete transformation chain:
+```
+T̂_World = T_I ∘ T_R ∘ T_C ∘ Û_multi ∘ Û_res
+```
 
-**Theorem**: Under conditions (C1')-(C4), the system converges:
-
+Fixed point convergence (Theorem 5.1):
 ```
 lim_{N→∞} T̂_Self^(N) |Ψ₀⟩ = |I⟩
 ```
 
-with exponential rate `C|λ₂|^N`.
+---
 
-### Free Energy Principle Connection
+## 📊 Performance Comparison
 
-| FEP Concept | ReIG2 Correspondence |
-|-------------|---------------------|
-| Internal states μ | H_M ⊗ H_C |
-| Sensory input s | H_O |
-| Free energy F | L(world) + λD_KL |
+| Metric | V1 (Dense) | V2 (Sparse) |
+|--------|-----------|-------------|
+| Max Dimension | ~1,000 | 30,000+ |
+| Memory | O(n²) | O(nnz) |
+| Evolution | O(n³) | O(nnz·m) |
+| Sparsity Support | ❌ | ✅ |
+| Multi-axis Time | ❌ | ✅ |
+
+**Typical Compression**: 100-900x for dimensions > 1000
 
 ---
 
-## 🖼️ Figures
+## 🤖 V3: AI Thinking Partner Framework
 
-<details>
-<summary>Click to expand figures</summary>
+ReIG2 V3 extends the quantum-resonance framework into an AI dialogue system architecture:
 
-### System Architecture
-![System Architecture](images/fig1_system_architecture.png)
+- **World Tensor Layer**: Integrates meaning, context, ethics, future, and stability spaces
+- **Cognitive Partnership**: AI as a thinking partner, not an answer machine
+- **Safety Integration**: Twin-gate system (Intent Gate + Content Gate)
 
-### Convergence
-![Convergence](images/fig2_convergence.png)
-
-### Quantum Circuit
-![Circuit](images/fig4_circuit.png)
-
-</details>
+See `docs/v3/` for complete documentation.
 
 ---
 
-## 🛠️ Hardware Requirements
+## 📚 References
 
-### Quantum Hardware Specifications
-
-| Requirement | Specification |
-|-------------|--------------|
-| Single-qubit fidelity | F > 99.9% |
-| Two-qubit fidelity | F > 99% |
-| T1 (relaxation) | > 100 μs |
-| T2 (coherence) | > 50 μs |
-| Circuit depth | < 1000 gates |
-
-**Recommended Platforms**:
-- IBM Quantum (ibm_kyoto, ibm_osaka)
-- IonQ
-- Google Sycamore
+1. Nielsen & Chuang, *Quantum Computation and Quantum Information* (2010)
+2. Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid* (1979)
+3. Friston, "The free-energy principle: a unified brain theory?" *Nature Reviews Neuroscience* (2010)
+4. Banach, "Sur les opérations dans les ensembles abstraits" (1922)
+5. Trotter, "On the product of semi-groups of operators" (1959)
+6. Lindblad, "On the generators of quantum dynamical semigroups" (1976)
 
 ---
 
-## 📚 Citation
+## 🔮 Future Directions
+
+### Theoretical
+- Non-commutative generator extensions
+- Full Lindblad integration
+- Tensor network methods
+
+### Experimental
+- Cognitive neuroscience validation (fMRI, EEG)
+- Quantum hardware implementation (IBM Quantum, IonQ)
+- Parameter estimation from behavioral data
+
+### Applications
+- Variational quantum algorithms
+- Quantum-inspired machine learning
+- Consciousness modeling
+
+---
+
+## 📝 Citation
 
 ```bibtex
 @article{wakita2025reig2,
-  title={ReIG2/twinRIG: A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction},
-  author={Yasuyuki Wakita},
-  journal={GitHub Pages},
+  title={ReIG2/twinRIG: A Comprehensive Framework from Time Evolution to Phase Transition Generation},
+  author={Wakita, Yasuyuki (Mechanic-Y)},
   year={2025},
-  note={Revised Edition},
-  url={https://mechanic-y.github.io/ReIG2-Research/}
+  month={December}
 }
 ```
-
-### APA Format
-```
-Wakita, Y. (2025). ReIG2/twinRIG: A Rigorous Quantum-Mechanical Framework for 
-Self-Reference and World Construction (Revised Edition). GitHub Pages. 
-https://mechanic-y.github.io/ReIG2-Research/
-```
-
----
-
-## 🗺️ Roadmap
-
-- [x] Mathematical rigor enhancement (2025.11.29)
-- [ ] arXiv submission (2026 Q1)
-- [ ] IBM Quantum experiments (2026 Q2)
-- [ ] Journal publication (2026 Q3)
-- [ ] Interactive web demos (2026 Q4)
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Areas for Contribution
-- Code optimization
-- Additional simulations
-- Hardware implementations
-- Documentation improvements
-- Bug reports
-
----
-
-## 📧 Contact
-
-- **Author**: Mechanic-Y / Yasuyuki Wakita
-- **GitHub**: [@mechanic-y](https://github.com/mechanic-y)
-- **Email**: (Add if desired)
-- **Original Site**: [ReIG2-twinRIG-Core](https://mechanic-y.github.io/ReIG2-twinRIG-Core/)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
+## 👤 Author
+
+**Mechanic-Y / Yasuyuki Wakita**
+
+- GitHub: [@Mechanic-Y](https://github.com/Mechanic-Y)
+- Website: [mechanic-y.github.io](https://mechanic-y.github.io)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- Theoretical foundations: Banach, Hofstadter, Friston
-- Quantum computing: Nielsen & Chuang
-- Community feedback and support
+The development of this framework was significantly aided by dialogue with ChatGPT（openAI）Gemini（Google）Claude (Anthropic). The mathematical rigorization, implementation verification, and integration of perspectives at each stage benefited from valuable insights.
 
 ---
 
-## 📈 Stats
-
-![GitHub stars](https://img.shields.io/github/stars/mechanic-y/ReIG2-Research?style=social)
-![GitHub forks](https://img.shields.io/github/forks/mechanic-y/ReIG2-Research?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/mechanic-y/ReIG2-Research?style=social)
+*Built with ❤️ for quantum cognitive science*
 
 ---
 
