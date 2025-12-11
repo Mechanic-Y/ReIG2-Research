@@ -84,7 +84,8 @@ python code/figure_generation.py
 ReIG2-Research/
 ├── papers/
 │   ├── reig2_revised_2025.pdf      # Main paper (21 pages)
-│   └── reig2_original.pdf          # Original paper
+│   ├── reig2_original.pdf          # Original paper
+|   └── ReIG2_twinRIG.pdf           # Comprehensive Framework - Japanese Version
 ├── slides/
 │   └── reig2_presentation.pdf      # Beamer presentation
 ├── code/
