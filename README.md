@@ -47,6 +47,8 @@ ReIG2/twinRIG is a comprehensive quantum-mechanical framework for modeling self-
 ```
 ReIG2-Research/
 ├── papers/
+│   ├── reig2_original.pdf
+│   ├── reig2_revised_2025.pdf
 │   └── ReIG2_twinRIG_2025_December.pdf    # Main paper (December 2025)
 ├── code/
 |   ├── non_unitary_quantum.py      # Kraus, Lindblad implementations
@@ -270,9 +272,3 @@ The development of this framework was significantly aided by dialogue with ChatG
 ---
 
 *Built with ❤️ for quantum cognitive science*
-
----
-
-<p align="center">
-  <b>Built with ❤️ for quantum cognitive science</b>
-</p>
