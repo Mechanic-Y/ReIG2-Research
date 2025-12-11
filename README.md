@@ -49,6 +49,10 @@ ReIG2-Research/
 ├── papers/
 │   └── ReIG2_twinRIG_2025_December.pdf    # Main paper (December 2025)
 ├── code/
+|   ├── non_unitary_quantum.py      # Kraus, Lindblad implementations
+│   ├── reig2_full_simulation.py    # Complete 3-qubit system
+│   ├── quantum_circuit_implementation.py  # Qiskit circuits
+│   ├── figure_generation.py        # Reproducible visualizations 
 │   ├── v1/                                 # Dense matrix implementation
 │   │   ├── engine.py                       # Quantum state & evolution
 │   │   ├── operators.py                    # Hamiltonians & phase operators
@@ -57,7 +61,16 @@ ReIG2-Research/
 │       ├── engine_v2.py                    # Scalable sparse engine
 │       ├── operators_v2.py                 # Sparse operators
 │       └── demo_v2.py                      # V2 demonstration
+├── images/
+│   ├── fig1_system_architecture.png
+│   ├── fig2_convergence.png
+│   ├── fig3_nonunitary.png
+│   ├── fig4_circuit.png
+│   └── fig5_functor.png
 ├── docs/
+|   ├── mathematical_proofs.md      # Detailed theorem proofs
+│   ├── implementation_notes.md     # Code documentation
+│   ├── hardware_requirements.md    # Quantum hardware specs
 │   └── v3/                                 # V3 AI Partner Framework
 │       ├── 01_V3_Architecture.md           # System architecture
 │       ├── 02_WorldTensor_Core.md          # World tensor core
@@ -66,7 +79,9 @@ ReIG2-Research/
 │       ├── 05_V3_Response_Framework.md
 │       ├── 06_V3_Examples_and_Patterns.md
 │       └── 07_V3_Limitations_and_Policies.md
-└── README.md
+├── requirements.txt                # Python dependencies
+├── LICENSE                         # MIT License
+└── README.md                       # This file
 ```
 
 ---
