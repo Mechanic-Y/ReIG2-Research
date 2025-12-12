@@ -48,7 +48,7 @@ Experience the theory in action through our customized AI models.
 
 ### Latest: December 2025 Comprehensive Edition
 
-**Title**: ReIG2/twinRIG: 包括的フレームワーク — 時間発展から相転移生成へ
+**Title**: ReIG2/twinRIG: Comprehensive Framework — From Temporal Evolution to Phase Transition Generation
 
 **Author**: Mechanic-Y / Yasuyuki Wakita
 
