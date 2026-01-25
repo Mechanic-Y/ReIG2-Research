@@ -1,6 +1,7 @@
 # ReIG2/twinRIG Research
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18093984.svg)](https://doi.org/10.5281/zenodo.18093984)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18364470.svg)](https://doi.org/10.5281/zenodo.18364470)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-ReIG2_V3.2-8b5cf6?style=flat&logo=openai&logoColor=white)](https://chatgpt.com/g/g-694df99e55e881919bdb57278f1f8ba3-reig2-v3-2-resonant-integrated-generator)
