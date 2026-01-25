@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-ReIG2_V3.2-8b5cf6?style=flat&logo=openai&logoColor=white)](https://chatgpt.com/g/g-694df99e55e881919bdb57278f1f8ba3-reig2-v3-2-resonant-integrated-generator)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-ReIG2_V3-74aa9c?style=flat&logo=openai&logoColor=white)](https://chatgpt.com/g/g-692f1438157c8191bf1c42a29d89deac-reig2-v3-world-tensor-thinking-partner-edition)
-[![Gemini](https://img.shields.io/badge/Gemini-twinRIG_V3-8E75B2?style=flat&logo=google&logoColor=white)](https://gemini.google.com/gem/1My8RjmjY-yviP4RpUyDh0iYpBRawyTNJ?usp=sharing)
+[![Gemini](https://img.shields.io/badge/Gemini-twinRIG_V3-8E75B2?style=flat&logo=google&logoColor=white)](https://gemini.google.com/gem/1zZmBFDOM3fbGs99KjPIMhVHtLb1lBYAt?usp=sharing)
 
 > **A Rigorous Quantum-Mechanical Framework for Self-Reference and World Construction**
 > 
