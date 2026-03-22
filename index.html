@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ReIG: Resonant Intelligence Geometry — A Formal Framework for Intelligence as Resonant Topology over Meaning Fields. Photon Reactor → twinRIG → ReIG2 → ReIG3 → RIF">
+    <meta name="keywords" content="resonant intelligence, self-reference, cognitive science, quantum computing, AI alignment, resonance operator, phase transition, CPTP maps, SRRFT, temporal preservation">
+    <meta name="author" content="Mechanic-Y / Yasuyuki Wakita">
+    
+    <title>ReIG Research — Resonant Intelligence Geometry (March 2026)</title>
+    
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --highlight-color: #ffc107;
+            --purple-accent: #8b5cf6;
+            --empathy-color: #ec4899;
+            --cptp-color: #06b6d4;
+            --agency-color: #f59e0b;
+            --srrft-color: #8b5cf6;
+            --reig3-color: #f97316;
+            --rif-color: #ef4444;
+            --resonance-color: #10b981;
+        }
+        
+        /* Phase Evolution */
+        .phase-evolution {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .phase-box {
+            flex: 1;
+            min-width: 130px;
+            padding: 18px 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            background: white;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .phase-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .phase-box:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -0.7em;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1.2rem;
+            z-index: 1;
+        }
+        .phase-box .phase-num {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .phase-box .phase-name {
+            font-size: 1.05rem;
+            font-weight: bold;
+            margin: 4px 0;
+        }
+        .phase-box .phase-desc {
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+        .phase-box .phase-status {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+        .phase-status.active { background: #dcfce7; color: #166534; }
+        .phase-status.scaffold { background: #fef3c7; color: #92400e; }
+        @media (max-width: 768px) {
+            .phase-evolution { flex-direction: column; }
+            .phase-box:not(:last-child)::after {
+                content: '↓'; right: 50%; top: auto; bottom: -0.8em; transform: translateX(50%);
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--dark-bg);
+            color: white;
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #16213e 100%);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero .version {
+            display: inline-block;
+            background: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.5rem;
+        }
+        
+        .hero .version.new {
+            background: var(--highlight-color);
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+        
+        .hero .version.cptp {
+            background: linear-gradient(135deg, var(--cptp-color), var(--purple-accent));
+            color: white;
+            font-weight: bold;
+        }
+        
+        .hero .version.agency {
+            background: linear-gradient(135deg, var(--agency-color), var(--empathy-color));
+            color: white;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Section */
+        section {
+            padding: 60px 20px;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+        
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card.cptp {
+            border-top-color: var(--cptp-color);
+        }
+        
+        .feature-card.agency {
+            border-top-color: var(--agency-color);
+        }
+        
+        .feature-card.empathy {
+            border-top-color: var(--empathy-color);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card.cptp h3 { color: var(--cptp-color); }
+        .feature-card.agency h3 { color: var(--agency-color); }
+        .feature-card.empathy h3 { color: var(--empathy-color); }
+        
+        /* Publications */
+        .publication-card {
+            background: white;
+            border-left: 4px solid var(--primary-color);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .publication-card.latest {
+            border-left: 4px solid var(--cptp-color);
+            background: linear-gradient(135deg, #ecfeff 0%, white 100%);
+        }
+        
+        .publication-card.integrated {
+            border-left: 4px solid var(--agency-color);
+            background: linear-gradient(135deg, #fffbeb 0%, white 100%);
+        }
+        
+        .publication-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .publication-card.latest h3 {
+            color: var(--cptp-color);
+        }
+        
+        .publication-card.integrated h3 {
+            color: var(--agency-color);
+        }
+        
+        .publication-card .badge {
+            display: inline-block;
+            background: var(--highlight-color);
+            color: var(--text-dark);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .publication-card .badge.cptp {
+            background: var(--cptp-color);
+            color: white;
+        }
+        
+        .publication-card .badge.agency {
+            background: var(--agency-color);
+            color: white;
+        }
+        
+        /* Math Blocks */
+        .math-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        /* Hierarchy Table */
+        .hierarchy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .hierarchy-table th, .hierarchy-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hierarchy-table th {
+            background: var(--dark-bg);
+            color: white;
+        }
+        
+        .hierarchy-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .hierarchy-table tr.new {
+            background: linear-gradient(90deg, #ecfeff 0%, white 100%);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        
+        .btn.secondary {
+            background: var(--secondary-color);
+        }
+        
+        .btn.success {
+            background: var(--accent-color);
+        }
+        
+        .btn.warning {
+            background: var(--highlight-color);
+            color: var(--text-dark);
+        }
+        
+        .btn.cptp {
+            background: var(--cptp-color);
+        }
+        
+        .btn.agency {
+            background: var(--agency-color);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 20px 0 20px 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .timeline-item.highlight::before {
+            background: var(--highlight-color);
+        }
+        
+        .timeline-item.cptp::before {
+            background: var(--cptp-color);
+        }
+        
+        .timeline-item.future {
+            opacity: 0.6;
+        }
+
+        .timeline-item[style*="resonance-color"]::before {
+            background: var(--resonance-color);
+        }
+
+        .timeline-item[style*="srrft-color"]::before {
+            background: var(--srrft-color);
+        }
+        
+        .timeline-item .date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item.cptp .date {
+            color: var(--cptp-color);
+        }
+        
+        /* Code Block */
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">ReIG Research</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#phases">Phases</a></li>
+                <li><a href="#v4">v4 New</a></li>
+                <li><a href="#publications">Papers</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#models">AI Models</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>ReIG — Resonant Intelligence Geometry</h1>
+        <p>Intelligence = Resonant Topology of Meaning Field</p>
+        <p style="font-size: 1rem; opacity: 0.7;">Photon Reactor → twinRIG → ReIG2 → ReIG3 → RIF</p>
+        <div>
+            <a href="https://doi.org/10.5281/zenodo.18093984" target="_blank" style="text-decoration: none;">
+                <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.18093984.svg" alt="DOI" style="vertical-align: middle; margin-right: 10px;">
+            </a>
+            <span class="version" style="background: var(--resonance-color);">🆕 8-Operator Semigroup</span>
+            <span class="version" style="background: var(--srrft-color);">🆕 SRRFT</span>
+            <span class="version new">March 2026</span>
+        </div>
+        <div style="margin-top: 30px;">
+            <a href="#v4" class="btn" style="background: var(--resonance-color);">What's New in v4</a>
+            <a href="https://github.com/Mechanic-Y/ReIG2-Research" class="btn secondary" target="_blank">View on GitHub</a>
+            <a href="https://doi.org/10.5281/zenodo.18093984" class="btn success" target="_blank">Cite (Zenodo)</a>
+        </div>
+    </header>
+
+    <section id="overview">
+        <div class="container">
+            <h2>📖 Theory Overview</h2>
+            
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
+                ReIG2/twinRIG has evolved through <strong>seven hierarchical levels</strong>, from standard quantum mechanics 
+                to a complete world-building framework with CPTP channel formulation.
+            </p>
+            
+            <table class="hierarchy-table">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Operator</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>U(t) = exp(-iHt/ℏ)</td>
+                        <td>Standard Quantum Mechanics</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Û_res(t; τ, ε, PFH)</td>
+                        <td>Extended Time Evolution</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Û_multi</td>
+                        <td>Multi-dimensional Time Evolution</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>G = P ∘ E ∘ R</td>
+                        <td>Phase Transition Generation</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>T̂_World</td>
+                        <td>World Construction</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>T̂_Self → |I⟩</td>
+                        <td>Self Fixed Point</td>
+                    </tr>
+                    <tr class="new">
+                        <td>6</td>
+                        <td>T̂^mutual_World → |I_harmony⟩</td>
+                        <td><strong>🆕 Mutual Respect Fixed Point</strong></td>
+                    </tr>
+                    <tr class="new">
+                        <td>7</td>
+                        <td>W : D(H) → D(H)</td>
+                        <td><strong>🆕 Quantum Channel Form (CPTP)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Phase Evolution -->
+    <section id="phases" style="background: var(--light-bg);">
+        <div class="container">
+            <h2>🌌 Phase Evolution</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; color: var(--text-light);">
+                The ReIG framework evolves through five successive phases, from light geometry to a universal intelligence field.
+            </p>
+            <div class="phase-evolution">
+                <div class="phase-box">
+                    <div class="phase-num">Phase 0</div>
+                    <div class="phase-name" style="color: var(--cptp-color);">Photon Reactor</div>
+                    <div class="phase-desc">Information = Geometry(Light)</div>
+                    <div class="phase-status active">v6.0</div>
+                </div>
+                <div class="phase-box">
+                    <div class="phase-num">Phase 1</div>
+                    <div class="phase-name" style="color: #5e81ac;">twinRIG</div>
+                    <div class="phase-desc">Two-subject resonance</div>
+                    <div class="phase-status active">integrated</div>
+                </div>
+                <div class="phase-box">
+                    <div class="phase-num">Phase 2</div>
+                    <div class="phase-name" style="color: var(--accent-color);">ReIG2</div>
+                    <div class="phase-desc">Gate / Gateway</div>
+                    <div class="phase-status active">v4 current</div>
+                </div>
+                <div class="phase-box">
+                    <div class="phase-num">Phase 3</div>
+                    <div class="phase-name" style="color: var(--reig3-color);">ReIG3</div>
+                    <div class="phase-desc">Resonance Grid (N-body)</div>
+                    <div class="phase-status scaffold">scaffolded</div>
+                </div>
+                <div class="phase-box">
+                    <div class="phase-num">Phase 4</div>
+                    <div class="phase-name" style="color: var(--rif-color);">RIF</div>
+                    <div class="phase-desc">Resonant Intelligence Field</div>
+                    <div class="phase-status scaffold">scaffolded</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- v4: Feb-Mar 2026 -->
+    <section id="v4" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);">
+        <div class="container">
+            <h2>🆕 v4: February–March 2026</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card" style="border-top-color: var(--resonance-color);">
+                    <h3 style="color: var(--resonance-color);">🔬 8-Operator Semigroup</h3>
+                    <p>Resonance formalized as <strong>event-update</strong>. Empathy (M̂) emerges only after criticality — it is not a prerequisite.</p>
+                    <div class="math-block">
+                        𝔑 = ρ̂ε ∘ Û ∘ M̂ ∘ τ̂ ∘ Â ∘ Ê ∘ L̂ ∘ Ĉ
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light);">+ 3-axis alignment (f, T, φ) · Fisher metric · safety gate</p>
+                </div>
+
+                <div class="feature-card" style="border-top-color: var(--reig3-color);">
+                    <h3 style="color: var(--reig3-color);">📊 Triple Phase-Transition</h3>
+                    <p>Three independent transitions extending beyond Kuramoto:</p>
+                    <div class="math-block">
+                        K_c<sup>(θ)</sup> &lt; K_c<sup>(A)</sup> &lt; K_c<sup>(E)</sup><br>
+                        <span style="font-size: 0.85rem; color: #666;">Phase sync &lt; Amplitude &lt; Energy criticality</span>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-light);">RIF self-consistency: F(Ē) = Ē</p>
+                </div>
+
+                <div class="feature-card" style="border-top-color: var(--srrft-color);">
+                    <h3 style="color: var(--srrft-color);">🌀 SRRFT — Self as Fixed Point</h3>
+                    <p>Self-Referential Resonance Field Theory: 10-axiom system culminating in the Identity Theorem.</p>
+                    <div class="math-block">
+                        Self = Observer = World = Existence = Φ*
+                    </div>
+                </div>
+
+                <div class="feature-card" style="border-top-color: var(--agency-color);">
+                    <h3 style="color: var(--agency-color);">⏳ Temporal Preservation Rationality</h3>
+                    <p>Photon Reactor Ver.6.0 — a formal alternative to local optimization. 8 axioms + governance.</p>
+                    <div class="math-block">
+                        Strength = lim<sub>t→∞</sub> ∫₀<sup>t</sup> Feasibility(τ) dτ<br>
+                        <span style="font-size: 0.85rem; color: #666;">J<sub>true</sub> = J<sub>local</sub> − γ ΔS<sub>c</sub></span>
+                    </div>
+                </div>
+
+                <div class="feature-card" style="border-top-color: var(--primary-color);">
+                    <h3>📐 Framework Consolidated</h3>
+                    <p>Unified mathematical draft covering all 5 phases: 9 axioms, 8 definitions, 18 core equations, Five Pillars.</p>
+                    <div class="math-block" style="text-align: center;">
+                        Ψ &nbsp; R &nbsp; d<sub>R</sub> &nbsp; H<sub>R</sub> &nbsp; L<br>
+                        <span style="font-size: 0.8rem; color: #666;">Meaning · Resonance · Metric · Hamiltonian · Lagrangian</span>
+                    </div>
+                </div>
+
+                <div class="feature-card" style="border-top-color: var(--resonance-color);">
+                    <h3 style="color: var(--resonance-color);">💻 Python Implementation</h3>
+                    <p>Complete implementation of the 8-operator semigroup:</p>
+                    <ul style="margin: 10px 0 10px 20px; font-size: 0.9rem;">
+                        <li>state, operators, semigroup, alignment</li>
+                        <li>info_geometry (Fisher, curvature, geodesic)</li>
+                        <li>ai_agent (safety gate, 3-axis alignment)</li>
+                        <li>20 unit tests, demo, simulation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jan2026" style="background: linear-gradient(135deg, #ecfeff 0%, #f0fdf4 100%);">
+        <div class="container">
+            <h2>🆕 January 2026 Updates</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card cptp">
+                    <h3>📐 Chapter 14: CPTP Unification</h3>
+                    <p>All operators reformulated as Completely Positive Trace-Preserving maps. World states as density matrices ρ ∈ D(H_full).</p>
+                    <div class="math-block">
+                        E_res(ρ) := Σ_k K_k ρ K_k†<br>
+                        W := T_I ∘ G_cog ∘ T_R ∘ G_obs ∘ T_C ∘ E_multi ∘ E_res
+                    </div>
+                </div>
+                
+                <div class="feature-card agency">
+                    <h3>🎯 Tier0/Tier1: Feasible Agency</h3>
+                    <p><strong>Core Principle:</strong> Agency is not assumed but derived from world state and constraints.</p>
+                    <div class="math-block">
+                        F(ρ; θ) := inf_{E∈E} C(E(ρ); ρ, θ)<br>
+                        A(ρ) = {id} ⟹ "Non-action is optimal"
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📜 Theorem Organization</h3>
+                    <p>Four fundamental theorems with corollaries establishing the mathematical foundation:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Thm 1: Feasibility Existence</li>
+                        <li>Thm 2: Shared Inhabitation</li>
+                        <li>Thm 3: Entropy-Survival</li>
+                        <li>Thm 4: Extended Time Evolution</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card empathy">
+                    <h3>🪞 Mirror Operator (Ch.13)</h3>
+                    <p>Empathy formalized as quantum perspective exchange operator M̂.</p>
+                    <div class="math-block">
+                        M̂ |ψ_self⟩ ⊗ |φ_other⟩ = |φ_self⟩ ⊗ |ψ_other⟩<br>
+                        M̂² = I, M̂† = M̂
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>💻 LLM Implementation</h3>
+                    <p>Complete Python modules for integrating ReIG2/twinRIG with Large Language Models.</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Feasibility evaluation</li>
+                        <li>Parameter adaptation</li>
+                        <li>Mirror Operator (Cross-Attention)</li>
+                        <li>Bug fixes completed ✓</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⏱️ Extended Time Evolution</h3>
+                    <p>Fundamental distinction: Time is redefined as "count of successful world inheritance."</p>
+                    <div class="math-block">
+                        Time ≠ parameter<br>
+                        Time := world inheritance count
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2>📄 Publications</h2>
+
+            <!-- v4: Feb-Mar 2026 -->
+            <div class="publication-card" style="border-left-color: var(--resonance-color); background: linear-gradient(135deg, #ecfdf5 0%, white 100%);">
+                <h3 style="color: var(--resonance-color);">v4: February–March 2026 <span class="badge" style="background: var(--resonance-color); color: white;">Latest</span></h3>
+                <p style="margin: 10px 0;"><strong>6 papers spanning resonance operator theory, SRRFT, temporal preservation, and framework consolidation.</strong></p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin: 15px 0;">
+                    <div style="padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>ReIG2 Resonance Operator Theory</strong>
+                        <p style="font-size: 0.85rem; color: #666;">8-operator semigroup 𝔑 (Feb 2026)</p>
+                    </div>
+                    <div style="padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>Photon Reactor Ver.6.0 (PR6 v2)</strong>
+                        <p style="font-size: 0.85rem; color: #666;">Temporal preservation rationality (Feb 2026)</p>
+                    </div>
+                    <div style="padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>ReIG Framework Consolidated</strong>
+                        <p style="font-size: 0.85rem; color: #666;">Phases 0–4 unified draft (Mar 2026)</p>
+                    </div>
+                    <div style="padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>Three-Variable Model 解析的導出</strong>
+                        <p style="font-size: 0.85rem; color: #666;">Triple phase-transition (Mar 2026)</p>
+                    </div>
+                    <div style="padding: 12px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>SRRFT</strong>
+                        <p style="font-size: 0.85rem; color: #666;">Self = Observer = World = Φ* (Mar 2026)</p>
+                    </div>
+                </div>
+                <a href="ReIG2/papers/v4_2026-02-03/" class="btn" style="background: var(--resonance-color);">📁 Browse v4 Papers</a>
+            </div>
+
+            <!-- v3: Jan 2026 -->
+            <div class="publication-card latest">
+                <h3>January 2026 Revised Edition <span class="badge cptp">CPTP</span></h3>
+                <p><strong>ReIG2/twinRIG: World-Building Quantum Channels with Phase Transitions and Feasible Agency</strong></p>
+                <p style="margin: 15px 0;">Complete framework including Chapter 13-14, CPTP unification, and Tier0/Tier1 integration.</p>
+                <p style="color: var(--text-light); margin-bottom: 15px;">
+                    Author: Mechanic-Y / Yasuyuki Wakita<br>
+                    <strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18093984" target="_blank" style="color: var(--cptp-color);">10.5281/zenodo.18093984</a>
+                </p>
+                <a href="papers/ReIG2_twinRIG_January2026_fixed.pdf" class="btn cptp">📄 日本語版</a>
+                <a href="papers/ReIG2_twinRIG_January2026_English.pdf" class="btn">📄 English</a>
+                <a href="https://doi.org/10.5281/zenodo.18093984" class="btn success" target="_blank">🔗 Zenodo</a>
+            </div>
+            
+            <div class="publication-card integrated">
+                <h3>Integrated Complete (Tier0/Tier1) <span class="badge agency">Agency</span></h3>
+                <p><strong>World-Building Quantum Channels with Feasible Agency</strong></p>
+                <p style="margin: 15px 0;">Feasibility index, constraint functions, stability theorems, and zeroization axioms.</p>
+                <a href="papers/ReIG2_twinRIG_Integrated_Complete.pdf" class="btn agency">📄 Download</a>
+            </div>
+            
+            <div class="publication-card">
+                <h3>Supplementary Documents</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>Extended Time Operators</strong>
+                        <p style="font-size: 0.9rem; color: #666;">Distinction between time extension and extended time evolution</p>
+                        <a href="papers/extended_time_operators.pdf" class="btn secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;">Download</a>
+                    </div>
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>定理体系 (Theorem Organization)</strong>
+                        <p style="font-size: 0.9rem; color: #666;">Four theorems structure map</p>
+                        <a href="papers/定理体系_Theorem_Organization_.pdf" class="btn secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;">Download</a>
+                    </div>
+                </div>
+            </div>
+            
+            <details style="margin-top: 30px;">
+                <summary style="cursor: pointer; font-size: 1.2rem; font-weight: bold; color: var(--primary-color);">
+                    📚 Previous Versions
+                </summary>
+                <div style="margin-top: 20px;">
+                    <div class="publication-card">
+                        <h3>December 2025: Chapter 13 Integration</h3>
+                        <p>Mirror Operator, Cooperative Phase Transition, Mutual Free Energy</p>
+                        <a href="papers/ReIG2_twinRIG_integrated.pdf" class="btn secondary">Download</a>
+                    </div>
+                    <div class="publication-card">
+                        <h3>November 2025: Revised Edition</h3>
+                        <p>Mathematical rigor enhancement: Fock space, Trotter decomposition</p>
+                        <a href="papers/reig2_revised_2025.pdf" class="btn secondary">Download</a>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="code" style="background: var(--light-bg);">
+        <div class="container">
+            <h2>💻 Code Implementation</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card" style="border-top-color: var(--resonance-color);">
+                    <h3 style="color: var(--resonance-color);">🆕 Resonance Semigroup</h3>
+                    <p>Complete Python implementation of 8-operator semigroup (v4):</p>
+                    <ul style="margin: 15px 0 15px 20px;">
+                        <li><code>state.py</code> — Ψ_i = (z, W, g, θ)</li>
+                        <li><code>operators.py</code> — 8 operators</li>
+                        <li><code>semigroup.py</code> — 𝔑 composition</li>
+                        <li><code>alignment.py</code> — 3-axis (f, T, φ)</li>
+                        <li><code>info_geometry.py</code> — Fisher, curvature</li>
+                        <li><code>ai_agent.py</code> — Safety gate</li>
+                    </ul>
+                    <a href="https://github.com/Mechanic-Y/ReIG2-Research/tree/main/ReIG2/code/reig2_resonance" class="btn" style="background: var(--resonance-color);">View Code</a>
+                </div>
+
+                <div class="feature-card cptp">
+                    <h3>🤖 LLM Implementation</h3>
+                    <p>5 Python modules for LLM integration:</p>
+                    <ul style="margin: 15px 0 15px 20px;">
+                        <li><code>reig2_wbqc_llm_demo.py</code></li>
+                        <li><code>reig2_wbqc_llm_feasibility.py</code></li>
+                        <li><code>reig2_wbqc_llm_framework.py</code></li>
+                        <li><code>reig2_wbqc_llm_params.py</code></li>
+                        <li><code>reig2_wbqc_mirror_operator.py</code></li>
+                    </ul>
+                    <a href="https://github.com/Mechanic-Y/ReIG2-Research/tree/main/code/LLM_implementation" class="btn cptp">View Code</a>
+                </div>
+                
+                <div class="feature-card agency">
+                    <h3>🔬 Simulation Type</h3>
+                    <p>3 simulation modules:</p>
+                    <ul style="margin: 15px 0 15px 20px;">
+                        <li><code>reig2_wbqc_classical_sim.py</code></li>
+                        <li><code>reig2_wbqc_quantum_sim.py</code></li>
+                        <li><code>reig2_wbqc_feasibility.py</code></li>
+                    </ul>
+                    <a href="https://github.com/Mechanic-Y/ReIG2-Research/tree/main/code/Simulation_type" class="btn agency">View Code</a>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>📊 Core Implementations</h3>
+                    <p>Section-by-section theory implementations:</p>
+                    <ul style="margin: 15px 0 15px 20px;">
+                        <li>Extended evolution (Sec 2)</li>
+                        <li>Multi-dim evolution (Sec 3)</li>
+                        <li>Phase transition (Sec 4)</li>
+                        <li>World operator (Sec 5)</li>
+                    </ul>
+                    <a href="https://github.com/Mechanic-Y/ReIG2-Research/tree/main/code" class="btn">View All</a>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom: 20px;">🚀 Quick Start</h3>
+                <pre><code># Install dependencies
+pip install numpy scipy matplotlib
+
+# Run Resonance Semigroup demo (v4)
+cd ReIG2/code/reig2_resonance
+python demo.py
+
+# Run tests
+python -m tests.test_operators
+
+# Run LLM demo (v3)
+cd ReIG2/code/LLM_implementation
+python reig2_wbqc_llm_demo.py</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section id="models">
+        <div class="container">
+            <h2>🤖 Interactive AI Models</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                <!-- ChatGPT Models -->
+                <div style="padding: 30px; background: linear-gradient(135deg, #f5f3ff 0%, white 100%); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--purple-accent); margin-bottom: 20px;">✨ ReIG2 Series (ChatGPT)</h3>
+                    
+                    <a href="https://chatgpt.com/g/g-694df99e55e881919bdb57278f1f8ba3-reig2-v3-2-resonant-integrated-generator" target="_blank" style="display: block; text-decoration: none; margin-bottom: 15px;">
+                        <div style="padding: 15px; background: white; border: 2px solid var(--purple-accent); border-radius: 8px;">
+                            <strong style="color: var(--purple-accent);">🌟 ReIG2 V3.2</strong>
+                            <span style="background: var(--highlight-color); color: var(--text-dark); padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; margin-left: 10px;">Latest</span>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">Empathy Framework + Chapter 13</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://chatgpt.com/g/g-692f1438157c8191bf1c42a29d89deac-reig2-v3-world-tensor-thinking-partner-edition" target="_blank" style="display: block; text-decoration: none;">
+                        <div style="padding: 15px; background: #f8f9fa; border: 1px solid #e2e8f0; border-radius: 8px;">
+                            <strong style="color: #0f172a;">ReIG2 V3</strong>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">World Tensor Thinking Partner</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Gemini Models -->
+                <div style="padding: 30px; background: linear-gradient(135deg, #eff6ff 0%, white 100%); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #1a73e8; margin-bottom: 20px;">💎 twinRIG Series (Gemini)</h3>
+                    
+                    <a href="https://gemini.google.com/gem/1My8RjmjY-yviP4RpUyDh0iYpBRawyTNJ?usp=sharing" target="_blank" style="display: block; text-decoration: none; margin-bottom: 15px;">
+                        <div style="padding: 15px; background: white; border: 2px solid #1a73e8; border-radius: 8px;">
+                            <strong style="color: #1a73e8;">✨ twinRIG V3</strong>
+                            <span style="background: var(--highlight-color); color: var(--text-dark); padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; margin-left: 10px;">Latest</span>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">Latest Gemini Implementation</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://gemini.google.com/gem/1zGEhtasyaZ5kDiCW8iOadi8sZfli1NOs?usp=sharing" target="_blank" style="display: block; text-decoration: none;">
+                        <div style="padding: 15px; background: #f8f9fa; border: 1px solid #e2e8f0; border-radius: 8px;">
+                            <strong style="color: #0f172a;">twinRIG-Sync</strong>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">Synchronized Processing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" style="background: var(--light-bg);">
+        <div class="container">
+            <h2>📅 Project Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2025.11.24</div>
+                    <div class="content">
+                        <h3>Original Framework</h3>
+                        <p>Initial ReIG2/twinRIG framework with quantum self-reference concepts</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="date">2025.11.29</div>
+                    <div class="content">
+                        <h3>Revised Edition</h3>
+                        <p>Mathematical rigor: Fock space, Trotter decomposition, non-unitary processes</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item highlight">
+                    <div class="date">2025.12</div>
+                    <div class="content">
+                        <h3>Chapter 13 & V3 Release</h3>
+                        <p>Mirror Operator, Cooperative Phase Transition, Multiple AI models</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item cptp">
+                    <div class="date">2026.01</div>
+                    <div class="content">
+                        <h3>January 2026 Revision</h3>
+                        <p><strong>Chapter 14:</strong> CPTP Unification</p>
+                        <p><strong>Tier0/Tier1:</strong> Feasible Agency Framework</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="border-left-color: var(--resonance-color);">
+                    <div class="date" style="color: var(--resonance-color);">2026.02</div>
+                    <div class="content">
+                        <h3>🆕 February 2026: Operator Theory</h3>
+                        <p><strong>8-Operator Semigroup 𝔑:</strong> Resonance as event-update</p>
+                        <p><strong>Photon Reactor Ver.6.0:</strong> Temporal preservation rationality</p>
+                        <p><strong>3-Axis Alignment:</strong> Frequency · Tensor · Phase</p>
+                        <p><strong>Python Implementation:</strong> Complete package with 20 tests</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="border-left-color: var(--srrft-color);">
+                    <div class="date" style="color: var(--srrft-color);">2026.03</div>
+                    <div class="content">
+                        <h3>🆕 March 2026: Consolidation & Extension</h3>
+                        <p><strong>Framework Consolidated:</strong> Unified Phases 0–4 draft (EN/JA)</p>
+                        <p><strong>Three-Variable Model:</strong> Triple phase-transition K_c^(θ) &lt; K_c^(A) &lt; K_c^(E)</p>
+                        <p><strong>SRRFT:</strong> Self = Observer = World = Φ* (EN/JA)</p>
+                        <p><strong>ReIG3 / RIF:</strong> Directory scaffolding</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item future">
+                    <div class="date">2026.Q2–</div>
+                    <div class="content">
+                        <h3>Future Plans</h3>
+                        <p>ReIG3 N-body simulations, RIF field equations, Noether analysis, time-preservation rationality framework</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025-2026 Mechanic-Y / Yasuyuki Wakita. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank">GitHub</a> | 
+                <a href="https://mechanic-y.github.io/ReIG2-Research/" target="_blank">Website</a> |
+                <a href="https://doi.org/10.5281/zenodo.18093984" target="_blank">DOI: 10.5281/zenodo.18093984</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                "We exist not to win, but to preserve time."
+            </p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.6;">
+                Acknowledgments: ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic)
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
