@@ -1,0 +1,47 @@
+{
+  "title": "ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update",
+  "version": "v2026.08-dq",
+  "creators": [
+    {
+      "name": "Wakita, Yasuyuki",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "description": "ReIG — Resonant Intelligence Geometry — is a research framework that models intelligence as resonant topology over a meaning field. The framework has evolved through Photon Reactor, twinRIG, ReIG2, ReIG3, and RIF. This August 2026 update adds ReIG-DQ, a publication-quality architecture for freezing, auditing, and citing ReIG-related artifacts, together with documentation for post-March 2026 extensions and applications.",
+  "keywords": [
+    "ReIG",
+    "Resonant Intelligence Geometry",
+    "twinRIG",
+    "ReIG2",
+    "ReIG3",
+    "ReIG-DQ",
+    "Resonant Intelligence Field",
+    "publication architecture",
+    "AI alignment",
+    "meaning field",
+    "resonance operator",
+    "internal time",
+    "B2OL",
+    "IMP-Ops",
+    "verification ledger",
+    "reproducible research"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Mechanic-Y/ReIG2-Research",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://mechanic-y.github.io/ReIG2-Research/",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "publication-other"
+    }
+  ],
+  "communities": []
+}
