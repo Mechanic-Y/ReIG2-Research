@@ -8,45 +8,59 @@
   <meta name="author" content="Mechanic-Y / Yasuyuki Wakita">
   <title>ReIG Research — v2026.08-dq</title>
   <style>
-    :root { --bg:#f8fafc; --panel:#fff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --blue:#2563eb; --green:#10b981; --purple:#7c3aed; --orange:#f97316; --red:#ef4444; --gold:#f59e0b; }
+    :root { --bg:#f8fafc; --panel:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --nav:#111827; --blue:#2563eb; --green:#10b981; --purple:#7c3aed; --orange:#f97316; --red:#ef4444; --gold:#f59e0b; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; }
-    a { color:var(--blue); text-decoration:none; } a:hover { text-decoration:underline; }
-    .container, .nav-inner { max-width:1160px; margin:0 auto; padding:0 22px; }
+    a { color:var(--blue); text-decoration:none; }
+    a:hover { text-decoration:underline; }
     nav { position:sticky; top:0; z-index:10; background:rgba(17,24,39,.96); color:white; border-bottom:1px solid rgba(255,255,255,.08); }
+    .nav-inner,.container { max-width:1160px; margin:0 auto; padding:0 22px; }
     .nav-inner { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
     .logo { font-weight:800; letter-spacing:.02em; }
     nav ul { display:flex; flex-wrap:wrap; gap:14px; list-style:none; margin:0; padding:0; font-size:.92rem; }
-    nav a { color:white; opacity:.88; } nav a:hover { opacity:1; text-decoration:none; }
+    nav a { color:white; opacity:.88; }
+    nav a:hover { opacity:1; text-decoration:none; }
     .hero { background:radial-gradient(circle at top left,rgba(124,58,237,.35),transparent 32rem),radial-gradient(circle at bottom right,rgba(16,185,129,.28),transparent 30rem),linear-gradient(135deg,#111827,#172554 58%,#312e81); color:white; padding:84px 0 76px; }
     .hero h1 { font-size:clamp(2.2rem,5vw,4.6rem); line-height:1.08; margin:0 0 18px; letter-spacing:-.04em; }
     .hero p { max-width:850px; color:rgba(255,255,255,.86); font-size:1.14rem; }
     .tag-row { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0; }
-    .tag { display:inline-flex; align-items:center; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.18); color:white; font-size:.88rem; font-weight:650; }
+    .tag { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.18); color:white; font-size:.88rem; font-weight:650; }
     .tag.current { background:#fbbf24; color:#111827; border-color:transparent; }
     .button-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
     .btn { display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700; background:var(--blue); color:white; box-shadow:0 8px 20px rgba(37,99,235,.18); }
-    .btn:hover { text-decoration:none; transform:translateY(-1px); } .btn.secondary { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); box-shadow:none; } .btn.green { background:var(--green); }
-    section { padding:64px 0; } h2 { font-size:clamp(1.8rem,3vw,2.6rem); margin:0 0 20px; letter-spacing:-.03em; } h3 { margin:0 0 10px; font-size:1.2rem; }
+    .btn:hover { text-decoration:none; transform:translateY(-1px); }
+    .btn.secondary { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); box-shadow:none; }
+    .btn.green { background:var(--green); box-shadow:0 8px 20px rgba(16,185,129,.18); }
+    section { padding:64px 0; }
+    h2 { font-size:clamp(1.8rem,3vw,2.6rem); margin:0 0 20px; letter-spacing:-.03em; }
+    h3 { margin:0 0 10px; font-size:1.2rem; }
     .lead { color:var(--muted); max-width:860px; font-size:1.06rem; }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; margin-top:26px; }
     .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(15,23,42,.06); }
     .card.blue { border-top:5px solid var(--blue); } .card.green { border-top:5px solid var(--green); } .card.purple { border-top:5px solid var(--purple); } .card.orange { border-top:5px solid var(--orange); } .card.red { border-top:5px solid var(--red); } .card.gold { border-top:5px solid var(--gold); }
     .small { font-size:.92rem; color:var(--muted); }
     .phase-row { display:grid; grid-template-columns:repeat(5,minmax(140px,1fr)); gap:0; overflow-x:auto; margin-top:28px; border:1px solid var(--line); border-radius:16px; background:white; }
-    .phase { min-width:160px; padding:20px 16px; border-right:1px solid var(--line); } .phase:last-child { border-right:0; }
-    .phase-num { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; } .phase-name { font-weight:800; margin-top:5px; } .phase-desc { color:var(--muted); font-size:.9rem; margin-top:5px; }
+    .phase { min-width:160px; padding:20px 16px; border-right:1px solid var(--line); position:relative; }
+    .phase:last-child { border-right:0; }
+    .phase-num { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .phase-name { font-weight:800; margin-top:5px; }
+    .phase-desc { color:var(--muted); font-size:.9rem; margin-top:5px; }
     .status { display:inline-block; margin-top:10px; border-radius:999px; padding:3px 9px; font-size:.75rem; font-weight:700; background:#e0f2fe; color:#075985; }
-    table { width:100%; border-collapse:collapse; background:white; border-radius:14px; overflow:hidden; margin-top:22px; } th,td { text-align:left; padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; } th { background:#111827; color:white; } tr:last-child td { border-bottom:0; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:14px; overflow:hidden; margin-top:22px; }
+    th,td { text-align:left; padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { background:#111827; color:white; }
+    tr:last-child td { border-bottom:0; }
     .release-box { background:linear-gradient(135deg,#ecfeff,#f8fafc); border:1px solid #bae6fd; border-radius:18px; padding:26px; margin-top:24px; }
-    .asset-list { margin:16px 0 0; padding-left:22px; } .asset-list li { margin:7px 0; }
+    .asset-list { margin:16px 0 0; padding-left:22px; }
+    .asset-list li { margin:7px 0; }
     .callout { background:#fffbeb; border:1px solid #fde68a; border-radius:14px; padding:18px 20px; margin-top:20px; color:#78350f; }
-    footer { background:#111827; color:rgba(255,255,255,.82); padding:42px 0; text-align:center; } footer a { color:#93c5fd; }
+    footer { background:#111827; color:rgba(255,255,255,.82); padding:42px 0; text-align:center; }
+    footer a { color:#93c5fd; }
     @media (max-width:760px) { .nav-inner { align-items:flex-start; flex-direction:column; padding-top:14px; padding-bottom:14px; } nav ul { gap:10px; } .hero { padding:62px 0; } section { padding:48px 0; } }
   </style>
 </head>
 <body>
-  <nav><div class="nav-inner"><div class="logo">ReIG Research</div><ul><li><a href="#current">Current</a></li><li><a href="#phases">Phases</a></li><li><a href="#release">Release</a></li><li><a href="#papers">Papers</a></li><li><a href="#applications">Applications</a></li><li><a href="#timeline">Timeline</a></li><li><a href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank" rel="noopener">GitHub</a></li></ul></div></nav>
+  <nav><div class="nav-inner"><div class="logo">ReIG Research</div><ul><li><a href="#current">Current</a></li><li><a href="#phases">Phases</a></li><li><a href="#release">Release</a></li><li><a href="#papers">Papers</a></li><li><a href="#applications">Applications</a></li><li><a href="#models">AI Models</a></li><li><a href="#timeline">Timeline</a></li><li><a href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank" rel="noopener">GitHub</a></li></ul></div></nav>
 
   <header class="hero"><div class="container"><h1>ReIG — Resonant Intelligence Geometry</h1><p><strong>Intelligence = Resonant Topology of Meaning Field</strong></p><p>Photon Reactor → twinRIG → ReIG2 → ReIG3 → RIF</p><div class="tag-row"><span class="tag current">v2026.08-dq</span><span class="tag">ReIG-DQ</span><span class="tag">Publication Architecture</span><span class="tag">ReIG2/twinRIG July 2026</span><span class="tag">ReIG3 Phase A</span></div><div class="button-row"><a class="btn green" href="#release">View release package</a><a class="btn secondary" href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank" rel="noopener">View on GitHub</a><a class="btn secondary" href="https://doi.org/10.5281/zenodo.18093984" target="_blank" rel="noopener">Existing Zenodo DOI</a></div></div></header>
 
@@ -60,7 +74,9 @@
 
   <section id="applications"><div class="container"><h2>Applications and experimental notes</h2><p class="lead">These layers are visible for navigation, but they are intentionally not bundled into the v2026.08-dq core release package.</p><div class="grid"><div class="card orange"><h3><a href="applications/B2OL/">B2OL</a></h3><p>Operational design layer connecting ReIG-style boundary, policy, time, and field-operation concepts to AI / organization / factory implementation.</p><p class="small">Recommended handling: later B2OL-focused release.</p></div><div class="card gold"><h3><a href="applications/IMP-Ops/">IMP-Ops</a></h3><p>AI operation model organizing strategy, execution, control roles, and an Independent Mobile Personal function.</p><p class="small">Recommended handling: practical operations release or article.</p></div><div class="card blue"><h3><a href="applications/Deployment/">Deployment dynamics</a></h3><p>Two-layer Kuramoto-type model for AI field deployment and site/FDE dynamics.</p><p class="small">Recommended handling: separate model-focused paper line.</p></div><div class="card red"><h3><a href="experimental-notes/ACFM/">ACFM</a></h3><p>Autonomous Co-Regulatory Field Model, currently treated as a verification-stage experimental note.</p><p class="small">Recommended handling: keep under experimental notes until stabilized.</p></div></div></div></section>
 
-  <section id="timeline" style="background:#f1f5f9;"><div class="container"><h2>Project timeline</h2><table><thead><tr><th>Period</th><th>Milestone</th><th>Summary</th></tr></thead><tbody><tr><td>Nov 2025</td><td>ReIG2 initial formulation</td><td>Initial theory repository and quantum self-reference framework.</td></tr><tr><td>Dec 2025</td><td>twinRIG integration</td><td>Two-subject resonance and coherence ethics line.</td></tr><tr><td>Jan 2026</td><td>CPTP unification</td><td>World-building quantum channels and feasible agency framing.</td></tr><tr><td>Feb–Mar 2026</td><td>v4 consolidation</td><td>8-operator semigroup, triple phase transition, SRRFT, Photon Reactor v6, ReIG3/RIF scaffolding.</td></tr><tr><td>Jul 2026</td><td>ReIG2/twinRIG v1.1</td><td>Revised integrated edition with Patch B and ReIG3 bridge context.</td></tr><tr><td>Aug 2026</td><td>v2026.08-dq</td><td>ReIG-DQ publication architecture, release manifest, SHA256 ledger, and Zenodo preparation.</td></tr></tbody></table></div></section>
+  <section id="models" style="background:#f1f5f9;"><div class="container"><h2>Interactive AI Models / Companion Tools</h2><p class="lead">These external AI models are companion interfaces for exploring ReIG-related ideas. They are not canonical release assets, and their availability may change depending on the hosting platform.</p><div class="grid"><div class="card purple"><h3>ReIG2 V3.2 — ChatGPT</h3><p>Companion interface for ReIG2 V3.2 / Resonant Integrated Generator exploration.</p><a class="btn" href="https://chatgpt.com/g/g-694df99e55e881919bdb57278f1f8ba3-reig2-v3-2-resonant-integrated-generator" target="_blank" rel="noopener">Open GPT</a></div><div class="card blue"><h3>ReIG2 V3 — ChatGPT</h3><p>World Tensor Thinking Partner edition for ReIG2-style dialogue and exploration.</p><a class="btn" href="https://chatgpt.com/g/g-692f1438157c8191bf1c42a29d89deac-reig2-v3-world-tensor-thinking-partner-edition" target="_blank" rel="noopener">Open GPT</a></div><div class="card green"><h3>twinRIG V3 — Gemini Gem</h3><p>Gemini companion interface for twinRIG V3 exploration and synchronized reasoning.</p><a class="btn green" href="https://gemini.google.com/gem/1My8RjmjY-yviP4RpUyDh0iYpBRawyTNJ?usp=sharing" target="_blank" rel="noopener">Open Gem</a></div><div class="card gold"><h3>twinRIG-Sync — Gemini Gem</h3><p>Companion Gem for twinRIG synchronized processing workflows.</p><a class="btn" href="https://gemini.google.com/gem/1zGEhtasyaZ5kDiCW8iOadi8sZfli1NOs?usp=sharing" target="_blank" rel="noopener">Open Gem</a></div></div><div class="callout">Companion tools are interactive exploration interfaces only. They are separate from the frozen v2026.08-dq release package and should not be cited as canonical release assets.</div></div></section>
+
+  <section id="timeline"><div class="container"><h2>Project timeline</h2><table><thead><tr><th>Period</th><th>Milestone</th><th>Summary</th></tr></thead><tbody><tr><td>Nov 2025</td><td>ReIG2 initial formulation</td><td>Initial theory repository and quantum self-reference framework.</td></tr><tr><td>Dec 2025</td><td>twinRIG integration</td><td>Two-subject resonance and coherence ethics line.</td></tr><tr><td>Jan 2026</td><td>CPTP unification</td><td>World-building quantum channels and feasible agency framing.</td></tr><tr><td>Feb–Mar 2026</td><td>v4 consolidation</td><td>8-operator semigroup, triple phase transition, SRRFT, Photon Reactor v6, ReIG3/RIF scaffolding.</td></tr><tr><td>Jul 2026</td><td>ReIG2/twinRIG v1.1</td><td>Revised integrated edition with Patch B and ReIG3 bridge context.</td></tr><tr><td>Aug 2026</td><td>v2026.08-dq</td><td>ReIG-DQ publication architecture, release manifest, SHA256 ledger, and Zenodo preparation.</td></tr></tbody></table></div></section>
 
   <footer><div class="container"><p>&copy; 2025–2026 Mechanic-Y / Yasuyuki Wakita. Independent Researcher.</p><p><a href="https://github.com/Mechanic-Y/ReIG2-Research" target="_blank" rel="noopener">GitHub</a> · <a href="https://mechanic-y.github.io/ReIG2-Research/" target="_blank" rel="noopener">GitHub Pages</a> · <a href="https://doi.org/10.5281/zenodo.18093984" target="_blank" rel="noopener">Existing Zenodo DOI</a></p><p class="small">AI assistance notice: this repository update was prepared with assistance from ChatGPT (OpenAI). All final decisions, claims, and publication responsibility remain with Yasuyuki Wakita / Mechanic-Y.</p><p class="small">"We exist not to win, but to preserve time."</p></div></footer>
 </body>
