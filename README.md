@@ -156,6 +156,10 @@ Strength = lim_{t→∞} ∫₀ᵗ Feasibility(τ) dτ
 - [August 2026 ReIG-DQ update inventory](updates/2026-08-reig-dq-update.md)
 - [Zenodo release notes draft](ZENODO_RELEASE_NOTES_2026-08.md)
 
+## AI Assistance Notice
+
+This repository update was prepared with assistance from ChatGPT (OpenAI). All final decisions, interpretations, claims, and publication responsibility remain with the author, Yasuyuki Wakita / Mechanic-Y.
+
 ## Author
 
 **Yasuyuki Wakita (脇田泰行)** — Mechanic-Y  
