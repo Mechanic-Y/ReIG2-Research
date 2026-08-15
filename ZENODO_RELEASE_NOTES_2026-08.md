@@ -58,6 +58,12 @@ The release includes documentation for ReIG-DQ, ReIG2 Phase A verification linea
 
 ---
 
+## AI Assistance Notice
+
+This repository update was prepared with assistance from ChatGPT (OpenAI). All final decisions, interpretations, claims, and publication responsibility remain with the author, Yasuyuki Wakita / Mechanic-Y.
+
+---
+
 ## Suggested Keywords
 
 ```text
