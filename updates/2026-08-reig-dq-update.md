@@ -1,62 +1,112 @@
 # ReIG Research Update — August 2026
 
-**Version candidate:** `v2026.08-dq`  
+**Version:** `v2026.08-dq`  
 **Scope:** ReIG-related artifacts created or stabilized after the March 2026 repository state  
-**Status:** Public update inventory / Zenodo preparation note
+**Status:** Public update inventory / post-release clarification
 
-This document summarizes the ReIG-related work that should be reflected in the GitHub repository and in the next Zenodo record update. The repository was last structurally updated in March 2026; this August 2026 update adds the bridge from ReIG2/ReIG3 theory to publication architecture, operational layers, and verification-led public packaging.
+This document records the August 2026 repository architecture and clarifies the relationship among legacy ReIG2 research, the audited ReIG-DQ mathematical core, and the separate publication / verification infrastructure.
 
 ---
 
 ## 1. Update Principle
 
-This update should not treat every later artifact as a single undifferentiated "ReIG core" item. Instead, it separates the work into layers:
+The repository must not treat every ReIG-related artifact as one undifferentiated core. The August architecture separates the work into the following layers:
 
-1. **Core theory:** ReIG2 / ReIG3 / RIF mathematical and conceptual framework.
-2. **Publication and verification architecture:** ReIG-DQ, frozen artifacts, hash ledgers, structural audit scripts.
-3. **Operational design layer:** B2OL, IMP-Ops, factory/control applications.
-4. **Experimental or provisional PoC layer:** state-estimation prototypes and exploratory simulations.
-5. **Adjacent mathematical work:** observability, boundary, and finite-dimensional analysis papers that inform the ReIG research style but should remain distinguishable from the ReIG core.
+1. **Legacy / historical ReIG2 and twinRIG research:** resonance operators, meaning-field models, SRRFT, LLM integration, simulations, and related conceptual/experimental work.
+2. **ReIG-DQ mathematical core:** audited finite-dimensional dissipative-quantum results frozen as T-DQ-01 through T-DQ-05 plus the Identity Bridge.
+3. **Publication and verification architecture:** freeze manifests, canonical ledgers, independent-verifier provenance, SHA-256 integrity ledgers, bilingual synchronization, and release tooling.
+4. **ReIG3 / RIF extensions:** later theoretical extensions and pre-publication research lines.
+5. **Operational design layer:** B2OL, IMP-Ops, factory/control applications.
+6. **Experimental or provisional PoC layer:** state-estimation prototypes and exploratory simulations.
+7. **Adjacent mathematical work:** observability, boundary, and finite-dimensional analysis papers that inform the research style but remain distinguishable from the ReIG core unless direct dependencies are documented.
+
+The central clarification is:
+
+```text
+Legacy ReIG2 research
+    !=
+ReIG-DQ audited theorem core
+    !=
+Publication Architecture
+```
 
 ---
 
-## 2. Candidate Artifacts to Add or Reference
+## 2. ReIG-DQ — Current Meaning
+
+**ReIG-DQ: Reconstructed Design Theory for Dissipative Quantum Systems** is the audited mathematical reconstruction produced after formal review of earlier ReIG claims.
+
+Its frozen sequence is:
+
+- **T-DQ-01** — operational compatibility boundary;
+- **T-DQ-02** — projective asymptotic convergence;
+- **Identity Bridge** — \(I_0\) / \(I_1\) / \(I_{\rm ray}\) semantic separation;
+- **T-DQ-03** — \(I_0\) core attraction under finite-dimensional GKLS dynamics;
+- **T-DQ-04** — \(I_1\) exact logical recovery for one specified error isometry;
+- **T-DQ-05** — finite-stage ordered CPTP path semantics.
+
+Frozen guardrails include:
+
+```text
+order sensitivity != new physical principle
+T-DQ-02E = DEFERRED / SUPPORTED EXAMPLE ONLY
+```
+
+The earlier Banach-contraction convergence claim from legacy ReIG development is not used as the ReIG-DQ convergence theorem. T-DQ-02 uses explicit spectral hypotheses and convergence in projective ray space.
+
+---
+
+## 3. Publication Architecture — Separate Layer
+
+The publication architecture surrounds ReIG-DQ and related outputs but is not the definition of ReIG-DQ itself. It provides:
+
+- frozen artifact sets;
+- freeze manifests;
+- Canonical Theorem & Quarantine Ledger;
+- independent-verifier scripts and reports;
+- SHA-256 integrity checks;
+- bilingual Japanese/English synchronization;
+- GitHub / Zenodo release coordination;
+- separation between theory, implementation, applications, experiments, and adjacent mathematics.
+
+---
+
+## 4. Artifact Classification
 
 | Artifact / Theme | Layer | ReIG Relation | Suggested Repository Placement | Publication Status |
 |---|---:|---|---|---|
-| **ReIG-DQ Publication Architecture v0.1** | Publication architecture | Provides a public-quality verification and identity bridge around ReIG outputs | `ReIG2/docs/`, `shared/release/`, or `updates/` | High priority |
-| **T-DQ-01 to T-DQ-05 frozen artifacts** | Publication architecture | Freeze set for ReIG-DQ publication packaging | `shared/release/reig-dq/` | High priority if files are available |
-| **Identity Bridge ledger** | Publication architecture | Connects author identity, artifact lineage, and release architecture | `shared/release/reig-dq/` | High priority |
-| **SHA256 / structural audit scripts** | Verification | Supports reproducibility and public release integrity | `shared/tools/` or `ReIG2/code/audit/` | High priority |
-| **ReIG2 Phase A v0.1.2 audit ledger** | Verification / implementation | Records V-03c standalone and external execution lineage | `ReIG2/code/phase-a/` | High priority |
-| **ReIG3 internal-time extension** | Core theory | Extends ReIG through state-dependent effective time operators | `ReIG3/papers/` and `ReIG3/code/` | Medium-high priority |
-| **B2OL / ReIG-B2OL体系** | Operational design | Links ReIG state, boundary, temporal and policy layers to field/AI operations | `ReIG3/papers/`, `shared/applications/`, or new `B2OL/` | Medium-high priority |
-| **IMP-Ops / AI operation roles** | Operational design | Applies ReIG-style role and resonance management to AI operations | `shared/applications/imp-ops/` | Medium priority |
-| **StockPilot / ReIG Factory Core concept** | Factory application | Applies resonance scoring and boundary detection to manufacturing control | `shared/applications/factory/` | Medium priority |
-| **ReIG earthquake state-estimation PoC** | Experimental PoC | Uses ReIG-like state estimation; must be clearly labeled non-predictive | `shared/experiments/earthquake-poc/` | Low-medium priority, with caution |
-| **Observability Boundaries for Near-Critical Weil Blocks** | Adjacent mathematics | Adjacent finite-dimensional observability work; not ReIG core | separate repository or `shared/adjacent-math/` | Optional / separate preferred |
+| **T-DQ-01 to T-DQ-05 frozen artifacts** | ReIG-DQ core | Audited mathematical reconstruction | `ReIG-DQ/` and release package | Frozen / high priority |
+| **Identity Bridge** | ReIG-DQ core / semantics | Separates occupancy, logical identity, and projective identity | `ReIG-DQ/audit/identity_bridge/` | Frozen |
+| **Canonical Ledger / Publication Architecture** | Publication / verification | Provenance, quarantine, release integrity | `ReIG-DQ/audit/` / release package | Frozen / supporting |
+| **SHA256 / structural audit scripts** | Verification | Reproducibility and public release integrity | `ReIG-DQ/audit/` / release package | Supporting evidence |
+| **Legacy 8-operator ReIG2 code** | Historical / experimental ReIG2 | Earlier resonance-model implementation | `ReIG2/code/` | Preserved; not frozen ReIG-DQ evidence |
+| **ReIG2 Phase A verification lineage** | Verification / implementation | Historical audit lineage and bridge work | `ReIG2/` / supporting docs | Context-dependent |
+| **ReIG3 internal-time extension** | ReIG3 theory | Later research extension | `ReIG3/papers/` and `ReIG3/code/` | Pre-publication / research |
+| **B2OL / ReIG-B2OL体系** | Operational design | ReIG-adjacent state/boundary/time/policy application | `applications/B2OL/` | Applied concept |
+| **IMP-Ops / AI operation roles** | Operational design | ReIG-adjacent AI operations | `applications/IMP-Ops/` | Applied concept |
+| **ReIG earthquake state-estimation PoC** | Experimental PoC | Exploratory state estimation | `experimental-notes/` | Provisional / non-predictive |
+| **Observability Boundaries for Near-Critical Weil Blocks** | Adjacent mathematics | Finite-dimensional observability work | separate / adjacent math | Distinct from ReIG core |
 
 ---
 
-## 3. Recommended Public Narrative
+## 5. Recommended Public Narrative
 
-The August 2026 update should be framed as:
+The August 2026 public narrative should be:
 
-> From March to August 2026, the project moved from the initial ReIG2/ReIG3 theoretical repository toward a more public, auditable, and publishable research architecture. The main addition is ReIG-DQ: a documentation and verification layer for freezing, auditing, and connecting ReIG-related artifacts. Several operational and applied layers, including B2OL and factory-oriented control concepts, are also now treated as ReIG-adjacent applications rather than as replacements for the core theory.
+> From March to August 2026, the project moved from a broad ReIG2/ReIG3 theory-and-code repository toward a layered research architecture. Legacy ReIG2 resonance models and implementations remain available as historical and experimental context. In parallel, ReIG-DQ was reconstructed as an independently audited finite-dimensional dissipative-quantum mathematical core. A separate Publication Architecture now freezes and verifies that core through canonical ledgers, independent-verifier provenance, SHA-256 manifests, bilingual synchronization, and GitHub/Zenodo release packaging. Applied layers such as B2OL and experimental PoCs remain explicitly separated from the frozen theorem core.
 
-This keeps the claim modest while making the update meaningful.
+This formulation avoids both under-describing the ReIG-DQ mathematics and over-attributing legacy ReIG2 claims to the frozen core.
 
 ---
 
-## 4. Suggested Version Naming
+## 6. Version Naming
 
-Recommended GitHub release / Zenodo version:
+Current GitHub release / Zenodo version:
 
 - `v2026.08-dq`
-- Alternative: `v2026.08.0`
-- Release title: **ReIG-DQ and Publication Architecture Update**
+- Release title: **ReIG-DQ Audited Core and Publication Architecture Update**
 
-Suggested Git tag:
+Git tag:
 
 ```text
 v2026.08-dq
@@ -64,37 +114,22 @@ v2026.08-dq
 
 ---
 
-## 5. Files Still Needed Before Final Zenodo Deposit
-
-Before making the Zenodo version final, confirm the actual files to upload or link:
-
-- ReIG-DQ core document, preferably PDF + Markdown/source.
-- Frozen artifact set T-DQ-01 to T-DQ-05, if intended for public release.
-- Identity Bridge document or ledger.
-- SHA256SUMS or equivalent hash manifest.
-- Audit scripts, if public release is intended.
-- Updated README and repository index page.
-- Any source ZIP or LaTeX/Markdown package that should be archived.
-
----
-
-## 6. Caution Labels
+## 7. Caution Labels
 
 Use explicit caution labels for exploratory work:
 
 - Earthquake-related PoCs are **state-estimation experiments**, not official forecasts.
-- B2OL / Factory Core materials are **operational design concepts**, not validated industrial safety systems.
+- B2OL / Factory materials are **operational design concepts**, not validated industrial safety systems.
 - Adjacent mathematical papers should not be presented as direct proofs of ReIG unless the relationship is explicitly established.
+- Legacy ReIG2 simulations and code do not automatically validate frozen ReIG-DQ theorems.
 
 ---
 
-## 7. Minimal Release Checklist
+## 8. Post-Release Clarification Checklist
 
-- [ ] Update root `README.md` to show `v2026.08-dq` as the current repository update.
-- [ ] Add or update release notes for Zenodo.
-- [ ] Add `.zenodo.json` metadata.
-- [ ] Add file manifest and SHA256SUMS if public artifacts are attached.
-- [ ] Review GitHub Pages `index.html` after README update.
-- [ ] Create GitHub release/tag.
-- [ ] Trigger or manually update Zenodo record.
-- [ ] Verify DOI metadata and citation text after Zenodo publication.
+- [x] Root `README.md` distinguishes legacy ReIG2, ReIG-DQ, and Publication Architecture.
+- [x] `ReIG-DQ/README.md` defines the audited mathematical core.
+- [x] `.zenodo.json` no longer defines ReIG-DQ merely as documentation quality.
+- [x] Zenodo/GitHub release notes distinguish mathematical core from publication infrastructure.
+- [ ] Review GitHub Pages `index.html` for the same ambiguity.
+- [ ] If Zenodo metadata is edited or a new version is issued, synchronize the clarified description there.

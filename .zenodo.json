@@ -1,5 +1,5 @@
 {
-  "title": "ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update",
+  "title": "ReIG2 / twinRIG / ReIG-DQ Research: Audited Dissipative-Quantum Core and Publication Architecture Update",
   "version": "v2026.08-dq",
   "creators": [
     {
@@ -7,24 +7,25 @@
       "affiliation": "Independent Researcher"
     }
   ],
-  "description": "ReIG — Resonant Intelligence Geometry — is a research framework that models intelligence as resonant topology over a meaning field. The framework has evolved through Photon Reactor, twinRIG, ReIG2, ReIG3, and RIF. This August 2026 update adds ReIG-DQ, a publication-quality architecture for freezing, auditing, and citing ReIG-related artifacts, together with documentation for post-March 2026 extensions and applications.",
+  "description": "ReIG is a research program spanning legacy ReIG2/twinRIG resonance models, later ReIG3/RIF extensions, applications, and audited mathematical work. The August 2026 release distinguishes these layers explicitly. ReIG-DQ (Reconstructed Design Theory for Dissipative Quantum Systems) is the audited finite-dimensional dissipative-quantum mathematical core organized as T-DQ-01 through T-DQ-05 plus the Identity Bridge. A separate Publication Architecture provides frozen artifacts, independent-verifier provenance, SHA-256 integrity ledgers, bilingual synchronization, and GitHub/Zenodo release coordination. Legacy ReIG2 resonance-operator code and philosophical/experimental models are preserved as historical research context and should not be conflated with the frozen ReIG-DQ theorem core unless an explicit dependency is documented.",
   "keywords": [
     "ReIG",
-    "Resonant Intelligence Geometry",
-    "twinRIG",
     "ReIG2",
+    "twinRIG",
     "ReIG3",
     "ReIG-DQ",
-    "Resonant Intelligence Field",
+    "dissipative quantum dynamics",
+    "GKLS",
+    "CPTP",
+    "projective convergence",
+    "quantum error recovery",
+    "ordered quantum channels",
     "publication architecture",
-    "AI alignment",
-    "meaning field",
-    "resonance operator",
-    "internal time",
-    "B2OL",
-    "IMP-Ops",
     "verification ledger",
-    "reproducible research"
+    "SHA-256 provenance",
+    "reproducible research",
+    "B2OL",
+    "IMP-Ops"
   ],
   "license": "MIT",
   "access_right": "open",

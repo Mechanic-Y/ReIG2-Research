@@ -1,7 +1,7 @@
-# Zenodo Release Notes — ReIG-DQ and Publication Architecture Update
+# Zenodo Release Notes — ReIG-DQ Audited Core and Publication Architecture Update
 
 **Version:** `v2026.08-dq`  
-**Title:** `ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update`  
+**Title:** `ReIG2 / twinRIG / ReIG-DQ Research: Audited Dissipative-Quantum Core and Publication Architecture Update`  
 **Repository:** `Mechanic-Y/ReIG2-Research`  
 **Author:** Yasuyuki Wakita / Mechanic-Y  
 **License:** MIT License  
@@ -11,41 +11,90 @@
 
 ## Release Summary
 
-This release updates the ReIG2-Research repository from its March 2026 state to the August 2026 research architecture. The main addition is **ReIG-DQ**, a documentation-quality and publication-architecture layer for organizing, freezing, auditing, and citing ReIG-related artifacts.
+This release updates the ReIG2-Research repository from its March 2026 state to the August 2026 audited and release-oriented research architecture.
 
-The update also records the emergence of several ReIG-related workstreams: ReIG2 Phase A verification artifacts, ReIG3 internal-time extensions, B2OL / factory-oriented operational design, and experimental state-estimation PoCs. These are separated into core, publication, operational, experimental, and adjacent-mathematics layers to avoid overclaiming and to keep the public archive navigable.
+The update intentionally separates three layers that should not be conflated:
+
+1. **Legacy / historical ReIG2 and twinRIG** — earlier resonance-operator, meaning-field, SRRFT, LLM-integration, simulation, and related conceptual work.
+2. **ReIG-DQ** — the audited finite-dimensional dissipative-quantum mathematical core reconstructed as T-DQ-01 through T-DQ-05 plus the Identity Bridge.
+3. **Publication Architecture** — the separate reproducibility and release infrastructure for frozen artifacts, verifier provenance, SHA-256 ledgers, bilingual synchronization, and GitHub/Zenodo publication coordination.
+
+ReIG-DQ is therefore **not merely a documentation-quality layer**. The publication architecture is the layer around the ReIG-DQ mathematical core.
+
+Legacy ReIG2 code and historical claims remain public for research continuity, but they should not be treated as frozen ReIG-DQ theorem evidence unless an explicit dependency is documented.
 
 ---
 
-## Major Additions Since March 2026
+## 1. ReIG-DQ — Audited Mathematical Core
 
-### 1. ReIG-DQ Publication Architecture
+**ReIG-DQ: Reconstructed Design Theory for Dissipative Quantum Systems** contains the frozen sequence:
 
-ReIG-DQ is introduced as a publication and verification layer for ReIG research artifacts. It focuses on:
+- **T-DQ-01** — operational compatibility boundary;
+- **T-DQ-02** — projective asymptotic convergence;
+- **Identity Bridge** — explicit separation of \(I_0\), \(I_1\), \(I_{\rm ray}\), and pure-state density representation;
+- **T-DQ-03** — \(I_0\) core attraction under finite-dimensional GKLS dynamics;
+- **T-DQ-04** — \(I_1\) exact logical recovery for one specified error isometry;
+- **T-DQ-05** — finite-stage ordered CPTP path semantics.
 
-- frozen artifact sets;
-- identity and citation bridges;
+A central frozen guardrail is:
+
+```text
+order sensitivity != new physical principle
+```
+
+T-DQ-02E remains:
+
+```text
+DEFERRED / SUPPORTED EXAMPLE ONLY
+```
+
+The earlier Banach-contraction claim from legacy ReIG development is not the convergence theorem used by ReIG-DQ. The frozen T-DQ-02 theorem instead uses explicit finite-dimensional spectral hypotheses and projective-ray convergence.
+
+---
+
+## 2. Publication Architecture — Separate Reproducibility Layer
+
+The publication architecture provides:
+
+- frozen artifact sets and freeze manifests;
+- canonical theorem and quarantine ledgers;
+- independent-verifier scripts and reports;
 - hash-based integrity checks;
-- structural publication audits;
-- separation between core theory, implementation, application, and adjacent work.
+- bilingual Japanese/English synchronization;
+- GitHub / Zenodo release coordination;
+- separation between core theory, legacy implementation, application, experimental PoC, and adjacent mathematics.
 
-### 2. ReIG2 Phase A Verification Lineage
+This layer makes ReIG-DQ auditable and reproducible; it is not itself the mathematical definition of ReIG-DQ.
 
-The August 2026 update records Phase A implementation and audit lineage, including standalone verification artifacts, ledger-style documentation, SHA256 manifests, and publication audit scripts where available.
+---
 
-### 3. ReIG3 Internal-Time and State-Dependent Extensions
+## 3. Legacy ReIG2 / twinRIG Context
 
-The ReIG3 line is extended through internal-time and state-dependent effective time-operator formulations. These materials should be treated as core-theory extensions or preprints rather than as finalized software packages.
+The repository preserves the earlier ReIG2 research line, including the eight-operator implementation, phase-transition explorations, SRRFT, information-geometric and AI-agent experiments, and LLM-integration modules.
 
-### 4. B2OL / Operational Design Layer
+These materials are valuable as historical / experimental research context, but they are not automatically part of the frozen ReIG-DQ theorem core.
+
+---
+
+## 4. ReIG3 Internal-Time and State-Dependent Extensions
+
+The ReIG3 line is extended through internal-time and state-dependent effective time-operator formulations. These materials should be treated as research extensions or preprints rather than as finalized software packages.
+
+---
+
+## 5. B2OL / Operational Design Layer
 
 B2OL and related factory/AI-operation materials are treated as ReIG-adjacent applied layers. They connect resonance, boundaries, policy layers, temporal metrics, and field operation concepts to practical AI/organization/manufacturing design.
 
-### 5. Experimental State-Estimation PoCs
+---
+
+## 6. Experimental State-Estimation PoCs
 
 Experimental PoCs, including earthquake-related state-estimation work, are included only with caution labels. They should not be presented as official predictions or validated public-safety systems.
 
-### 6. Adjacent Mathematical Work
+---
+
+## 7. Adjacent Mathematical Work
 
 Finite-dimensional observability and boundary-analysis papers may be referenced as adjacent mathematical work. They should remain clearly distinguished from the ReIG core unless direct dependencies are explicitly documented.
 
@@ -53,9 +102,7 @@ Finite-dimensional observability and boundary-analysis papers may be referenced 
 
 ## Zenodo Description
 
-ReIG — Resonant Intelligence Geometry — is a research framework that models intelligence as resonant topology over a meaning field. The framework has evolved through Photon Reactor, twinRIG, ReIG2, ReIG3, and RIF. This August 2026 update adds ReIG-DQ, a publication-quality architecture for freezing, auditing, and citing ReIG-related artifacts, together with documentation for post-March 2026 extensions and applications.
-
-The release includes documentation for ReIG-DQ, ReIG2 Phase A verification lineage, ReIG3 internal-time extensions, and ReIG-adjacent operational design layers such as B2OL. Experimental materials are labeled as provisional and should not be interpreted as validated predictive systems.
+The August 2026 release distinguishes the historical ReIG2/twinRIG research line from the audited ReIG-DQ mathematical reconstruction and from the separate publication architecture used to freeze and verify it. ReIG-DQ is the finite-dimensional dissipative-quantum core organized as T-DQ-01 through T-DQ-05 plus the Identity Bridge. The publication architecture supplies frozen manifests, verifier provenance, SHA-256 integrity ledgers, synchronized bilingual manuscripts, and release coordination. Legacy ReIG2 code, applications, and experimental materials remain available with explicit scope labels.
 
 ---
 
@@ -68,7 +115,7 @@ This repository update was prepared with assistance from ChatGPT (OpenAI). All f
 ## Keywords
 
 ```text
-ReIG, Resonant Intelligence Geometry, twinRIG, ReIG2, ReIG3, ReIG-DQ, Resonant Intelligence Field, publication architecture, AI alignment, meaning field, resonance operator, internal time, B2OL, IMP-Ops, verification ledger, reproducible research
+ReIG, ReIG2, twinRIG, ReIG3, ReIG-DQ, dissipative quantum dynamics, GKLS, CPTP, projective convergence, quantum error recovery, ordered quantum channels, publication architecture, verification ledger, SHA-256 provenance, reproducible research, B2OL, IMP-Ops
 ```
 
 ---
@@ -76,7 +123,7 @@ ReIG, Resonant Intelligence Geometry, twinRIG, ReIG2, ReIG3, ReIG-DQ, Resonant I
 ## Citation Text
 
 ```text
-Yasuyuki Wakita / Mechanic-Y. (2026). ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update (v2026.08-dq). Zenodo. https://doi.org/10.5281/zenodo.21960025
+Yasuyuki Wakita / Mechanic-Y. (2026). ReIG2 / twinRIG / ReIG-DQ Research: Audited Dissipative-Quantum Core and Publication Architecture Update (v2026.08-dq). Zenodo. https://doi.org/10.5281/zenodo.21960025
 ```
 
 ---
@@ -111,3 +158,5 @@ Do not include private notes, unfinished drafts, or exploratory outputs unless t
 - [x] GitHub tag/release is created.
 - [x] Zenodo record is published.
 - [x] DOI and citation text are recorded.
+
+> **Metadata correction note:** the August 2026 documentation is being clarified so that external readers and AI systems do not conflate the ReIG-DQ mathematical core with the separate publication architecture or with legacy ReIG2 code.

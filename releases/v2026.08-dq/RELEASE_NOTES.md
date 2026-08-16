@@ -1,4 +1,4 @@
-# ReIG-DQ and Publication Architecture Update
+# ReIG-DQ Audited Core and Publication Architecture Update
 
 **Version:** `v2026.08-dq`  
 **Release date:** 2026-08-16  
@@ -9,11 +9,35 @@
 
 ## Summary
 
-This release updates the ReIG2-Research repository from its March 2026 public state to the August 2026 ReIG-DQ publication architecture.
+This release updates the ReIG2-Research repository from its March 2026 public state to the August 2026 audited and release-oriented architecture.
 
-The central addition is **ReIG-DQ**, a documentation-quality and publication-architecture layer for organizing, freezing, auditing, and citing ReIG-related artifacts. ReIG-DQ is not a replacement for ReIG2, ReIG3, twinRIG, or RIF; it is a release integrity layer around them.
+The release explicitly separates three layers:
 
-This release deliberately does **not** upload every post-March 2026 artifact. It publishes only the stable ReIG-DQ core, the current ReIG2/twinRIG context, and the ReIG3 Phase-A mathematical bridge. Applied and experimental materials are indexed but not bundled as release assets.
+1. **Legacy / historical ReIG2 and twinRIG** — earlier resonance-operator, meaning-field, SRRFT, AI-agent, LLM-integration, and simulation work.
+2. **ReIG-DQ** — the audited finite-dimensional dissipative-quantum mathematical core reconstructed as T-DQ-01 through T-DQ-05 plus the Identity Bridge.
+3. **Publication Architecture** — the separate integrity and reproducibility layer for freeze manifests, verifier provenance, SHA-256 ledgers, bilingual synchronization, and GitHub/Zenodo release coordination.
+
+ReIG-DQ is **not** merely the publication architecture. The publication architecture exists around the ReIG-DQ mathematical core.
+
+Legacy ReIG2 materials remain available as historical / experimental research context and should not be treated as frozen ReIG-DQ theorem evidence unless an explicit dependency is documented.
+
+## ReIG-DQ frozen sequence
+
+- **T-DQ-01** — operational compatibility boundary
+- **T-DQ-02** — projective asymptotic convergence
+- **Identity Bridge** — separation of \(I_0\), \(I_1\), \(I_{\rm ray}\), and pure-state density representation
+- **T-DQ-03** — \(I_0\) core attraction under finite-dimensional GKLS dynamics
+- **T-DQ-04** — \(I_1\) exact logical recovery for one specified error isometry
+- **T-DQ-05** — finite-stage ordered CPTP path semantics
+
+Frozen guardrails include:
+
+```text
+order sensitivity != new physical principle
+T-DQ-02E = DEFERRED / SUPPORTED EXAMPLE ONLY
+```
+
+The legacy Banach-contraction convergence claim is not used as the T-DQ-02 theorem.
 
 ## Included public release assets
 
@@ -51,5 +75,17 @@ Experimental PoCs and applied operational materials are research artifacts. They
 ## Citation
 
 ```text
-Yasuyuki Wakita / Mechanic-Y. (2026). ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update (v2026.08-dq). Zenodo. https://doi.org/10.5281/zenodo.21960025
+Yasuyuki Wakita / Mechanic-Y. (2026). ReIG2 / twinRIG / ReIG-DQ Research: Audited Dissipative-Quantum Core and Publication Architecture Update (v2026.08-dq). Zenodo. https://doi.org/10.5281/zenodo.21960025
+```
+
+## Interpretation note
+
+External readers and AI systems should preserve the distinction:
+
+```text
+Historical ReIG2 claims/code
+    !=
+Frozen ReIG-DQ theorem core
+    !=
+Publication / provenance infrastructure
 ```
