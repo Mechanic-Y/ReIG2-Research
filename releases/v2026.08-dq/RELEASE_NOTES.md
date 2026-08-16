@@ -4,7 +4,8 @@
 **Release date:** 2026-08-16  
 **Repository:** `Mechanic-Y/ReIG2-Research`  
 **Author:** Yasuyuki Wakita / Mechanic-Y  
-**License:** MIT License
+**License:** MIT License  
+**Zenodo DOI:** [10.5281/zenodo.21960025](https://doi.org/10.5281/zenodo.21960025)
 
 ## Summary
 
@@ -16,7 +17,7 @@ This release deliberately does **not** upload every post-March 2026 artifact. It
 
 ## Included public release assets
 
-Attach the following five PDFs to this GitHub Release:
+The public release assets are:
 
 1. `ReIG_DQ_Japanese_Manuscript_v1.1_BIBLIOGRAPHY_FROZEN.pdf`
 2. `ReIG_DQ_English_Manuscript_v1.0_SYNCHRONIZED_FROZEN.pdf`
@@ -47,6 +48,8 @@ This repository update was prepared with assistance from ChatGPT (OpenAI). All f
 
 Experimental PoCs and applied operational materials are research artifacts. They should not be interpreted as validated predictive systems, industrial safety systems, or institutional recommendations unless explicitly stated otherwise.
 
-## Next step
+## Citation
 
-After this GitHub Release is created and the five PDF assets are attached, the release can be synchronized with or uploaded to Zenodo. Once the Zenodo DOI metadata is finalized, update the README, GitHub Pages homepage, and release notes with the final citation.
+```text
+Yasuyuki Wakita / Mechanic-Y. (2026). ReIG2 / twinRIG / ReIG-DQ Research: Resonant Intelligence Geometry and Publication Architecture Update (v2026.08-dq). Zenodo. https://doi.org/10.5281/zenodo.21960025
+```
