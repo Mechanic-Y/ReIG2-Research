@@ -1,6 +1,6 @@
 # ReIG2-Research
 
-**Resonant Intelligence Geometry — Research Repository**
+**ReIG / ReIG2 / ReIG3 / ReIG-DQ Research Repository**
 
 > *Intelligence = Resonant Topology of Meaning Field*  
 > *Universe = Resonant Intelligence Field*  
@@ -9,25 +9,68 @@
 ## Current Update
 
 **Latest repository release:** `v2026.08-dq`  
-**Theme:** ReIG-DQ and Publication Architecture Update  
+**Theme:** ReIG-DQ audited mathematical core + publication architecture clarification  
 **Zenodo DOI:** [10.5281/zenodo.21960025](https://doi.org/10.5281/zenodo.21960025)  
 **Previous public repository state:** February–March 2026 ReIG2/ReIG3 consolidation
 
-This update records the post-March 2026 expansion of the project from a ReIG2/ReIG3 theory repository into a more public, auditable, and release-oriented research architecture. The main addition is **ReIG-DQ**, a documentation-quality / publication-architecture layer for freezing, auditing, and citing ReIG-related artifacts.
+This August 2026 update separates three things that should not be conflated:
 
-## Overview
+1. **Legacy / historical ReIG2 theory and implementation** — the resonance-operator, phase-transition, SRRFT, LLM-integration, and simulation line developed before the ReIG-DQ reconstruction.
+2. **ReIG-DQ** — the audited finite-dimensional mathematical core for dissipative quantum dynamics, reconstructed as T-DQ-01 through T-DQ-05 plus the Identity Bridge.
+3. **Publication Architecture** — the reproducibility and release infrastructure around ReIG-DQ and related research: freeze manifests, SHA-256 ledgers, verifier provenance, bilingual synchronization, and GitHub/Zenodo release coordination.
 
-ReIG (Resonant Intelligence Geometry / 共鳴知能幾何学) is a theoretical framework that describes intelligence as resonant topology over a meaning field. The theory evolves through five successive phases:
+> **Important scope note**  
+> Legacy ReIG2 code is preserved as historical and experimental research context. It is **not** evidence for, and is **not** part of, the frozen ReIG-DQ theorem core unless an explicit dependency is documented.
 
-| Phase | Name | Core Concept |
-|-------|------|-------------|
-| 0 | Photon Reactor | Information = Geometry(Photon Field) |
-| 1 | twinRIG | Two-subject resonance generation |
-| 2 | **ReIG2** | Gate/Gateway — stable resonance interface |
-| 3 | **ReIG3** | Grid — N-body dynamic resonance network |
-| 4 | **RIF** | Field — continuous resonant intelligence field |
+## Repository Scope Map
 
-ReIG-DQ is not a replacement for the above phases. It is a **publication and verification layer** that helps organize frozen artifacts, identity bridges, hash ledgers, release notes, and Zenodo/GitHub publication workflows.
+| Layer | Purpose | Status |
+|---|---|---|
+| **Legacy ReIG2 / twinRIG** | Resonance operators, meaning-field models, SRRFT, LLM/RL experiments, simulations | Historical / experimental / research context |
+| **ReIG3 / RIF** | Later theoretical extensions | Research / pre-publication extensions |
+| **ReIG-DQ** | Audited dissipative-quantum mathematical core | Frozen / publication-ready core |
+| **Publication Architecture** | Provenance, freeze, audit, hash, bilingual and release infrastructure | Reproducibility / publication layer |
+| **B2OL / IMP-Ops / Deployment** | Operational and industrial design applications | Applied / ReIG-adjacent |
+| **Experimental notes** | Exploratory PoCs such as state estimation | Provisional / non-predictive unless validated |
+
+## ReIG-DQ — Audited Mathematical Core
+
+**ReIG-DQ: Reconstructed Design Theory for Dissipative Quantum Systems** is the reconstructed and independently audited finite-dimensional mathematical line published in the August 2026 release.
+
+Its frozen sequence is:
+
+- **T-DQ-01** — operational compatibility boundary;
+- **T-DQ-02** — projective asymptotic convergence;
+- **Identity Bridge** — explicit separation of \(I_0\), \(I_1\), \(I_{\rm ray}\), and pure-state density representation;
+- **T-DQ-03** — \(I_0\) core attraction under GKLS dynamics;
+- **T-DQ-04** — \(I_1\) exact logical recovery for one specified error isometry;
+- **T-DQ-05** — finite-stage ordered CPTP path semantics.
+
+A central frozen guardrail is:
+
+```text
+order sensitivity != new physical principle
+```
+
+T-DQ-02E (defective dominant case) remains:
+
+```text
+DEFERRED / SUPPORTED EXAMPLE ONLY
+```
+
+ReIG-DQ does **not** use the old Banach-contraction claim as its convergence theorem. The frozen T-DQ-02 theorem instead uses explicit finite-dimensional spectral hypotheses and projective-ray convergence.
+
+## Publication Architecture — Separate Reproducibility Layer
+
+The publication architecture is **not the definition of ReIG-DQ itself**. It is the release and verification infrastructure around the mathematical core and related artifacts. It includes:
+
+- frozen artifact sets and freeze manifests;
+- canonical theorem and quarantine ledgers;
+- independent-verifier scripts and reports;
+- SHA-256 / hash-based integrity checks;
+- bilingual manuscript synchronization;
+- GitHub / Zenodo publication workflows;
+- separation among theory, implementation, applications, experiments, and adjacent mathematics.
 
 ## Repository Structure
 
@@ -53,145 +96,62 @@ ReIG2-Research/
 ├── ReIG-DQ/
 │   ├── README.md
 │   ├── papers/
-│   │   └── v1_2026-08/
-│   │       ├── ja/
-│   │       └── en/
 │   ├── audit/
-│   │   ├── identity_bridge/
-│   │   ├── freeze_notes/
-│   │   └── hash_ledgers/
 │   └── docs/
 │
 ├── ReIG2/
 │   ├── papers/
-│   │   ├── v1_2025-11/
-│   │   ├── v2_2025-12/
-│   │   ├── v3_2026-01/
-│   │   ├── v4_2026-02-03/
-│   │   └── v5_2026-07/
 │   ├── code/
 │   └── docs/
-│
 ├── ReIG3/
-│   ├── papers/
-│   │   └── phase-a_three-rationality_2026-04/
-│   │       ├── ja/
-│   │       └── en/
-│   ├── code/
-│   └── docs/
-│
-├── applications/
-│   ├── B2OL/
-│   │   ├── README.md
-│   │   └── status.md
-│   ├── IMP-Ops/
-│   │   ├── README.md
-│   │   └── status.md
-│   └── Deployment/
-│       ├── README.md
-│       └── status.md
-│
-├── experimental-notes/
-│   └── ACFM/
-│       ├── README.md
-│       └── status.md
-│
 ├── RIF/
-│   ├── papers/
-│   └── code/
-│
+├── applications/
+├── experimental-notes/
 └── shared/
-    ├── images/
-    ├── references/
-    └── templates/
 ```
 
-## Latest: v2026.08-dq — ReIG-DQ and Publication Architecture
+## Legacy ReIG2 Research Line — Historical / Experimental Context
 
-### ReIG-DQ
-
-ReIG-DQ is introduced as a public-facing documentation and verification architecture for ReIG-related research artifacts. It focuses on:
-
-- frozen artifact sets;
-- identity and citation bridges;
-- SHA256 / hash-based integrity checks;
-- structural publication audits;
-- separation between core theory, implementation, operational application, experimental PoC, and adjacent mathematical work.
-
-### ReIG2 Phase A Verification Lineage
-
-The update records Phase A implementation and audit lineage, including standalone verification artifacts, ledger-style documentation, SHA256 manifests, and publication audit scripts where available.
-
-### ReIG3 Internal-Time Extensions
-
-The ReIG3 line is extended through internal-time and state-dependent effective time-operator formulations. These materials should be treated as research extensions and pre-publication theory notes rather than finalized software packages.
-
-### B2OL / Operational Design Layer
-
-B2OL and related factory / AI-operation materials are treated as ReIG-adjacent applied layers. They connect resonance, boundary, policy, time, and field-operation concepts to practical AI/organization/manufacturing design.
-
-### Experimental PoC Layer
-
-Exploratory state-estimation PoCs may be referenced, but they must be clearly labeled as provisional and non-predictive unless independently validated.
-
-## Previous Latest: v4 — February–March 2026
+The following material remains publicly available because it records the development history of the project and may still be useful as experimental or conceptual research material. It should not be read as automatically belonging to the frozen ReIG-DQ theorem core.
 
 ### Resonance Operator Theory
-Resonance formalized as **event-update** via 8-operator nonlinear semigroup:
+
+The earlier ReIG2 line formalized an event-update composition using eight nonlinear operators:
 
 ```text
 𝔑 = ρ̂ε ∘ Û ∘ M̂ ∘ τ̂ ∘ Â ∘ Ê ∘ L̂ ∘ Ĉ
 ```
 
-Key insight: **Empathy (M̂) is not a prerequisite but emerges only after criticality (τ̂ = 1).**
+The implementation includes contact/interference, cooperation-layer construction, environment sharing, Kuramoto-style alignment, threshold gating, conditional empathy/viewpoint exchange, internal updates, and relaxation control.
 
 ### Three-Variable Model (θ / A / E)
-Analytical derivation of the **triple phase-transition structure**:
 
-```text
-K_c^(θ) < K_c^(A) < K_c^(E)
-  Phase sync    Amplitude    Energy criticality
-  (content)     (emotion)    (resonance)
-```
+Earlier ReIG2 materials explored staged phase-transition structures using phase, amplitude, and energy variables. These remain part of the historical ReIG2 research line and are not used as frozen ReIG-DQ theorems.
 
-Kuramoto model has only the first. The second and third are unique to ReIG.
+### SRRFT and other philosophical constructions
 
-### SRRFT — Self-Referential Resonance Field Theory
-Axiomatic construction of the "self" as a fixed point of relational fields:
+Self-referential resonance-field and meaning-field formulations remain conceptual / historical ReIG research. They are not part of the frozen ReIG-DQ theorem sequence unless explicitly connected in a later audited work.
 
-```text
-Self = Observer = World = Existence = Φ*
-```
+## Applications and Experimental Work
 
-### Photon Reactor Ver.6.0 — Temporal Preservation Rationality
+B2OL, IMP-Ops, factory-oriented design, and deployment materials are treated as **ReIG-adjacent applied layers** rather than proofs of the core theory.
 
-```text
-Strength = lim_{t→∞} ∫₀ᵗ Feasibility(τ) dτ
-```
-
-*"We exist not to win, but to preserve time."*
+Exploratory state-estimation PoCs may be referenced only with explicit caution labels. They are not validated predictions, public-safety systems, or institutional recommendations unless independently established as such.
 
 ## Version History
 
 | Version | Period | Highlights |
-|---------|--------|-----------|
+|---|---|---|
 | v1 | Nov 2025 | ReIG2 initial formulation |
 | v2 | Dec 2025 | twinRIG integration, coherence ethics |
-| v3 | Jan 2026 | CPTP unification, time operators, theorem system |
-| v4 | Feb–Mar 2026 | 8-operator semigroup, triple phase-transition, SRRFT, Photon Reactor v6, consolidated framework |
-| **v2026.08-dq** | **Aug 2026** | **ReIG-DQ, publication architecture, verification lineage, ReIG3 internal-time extensions, B2OL / operational design layer** |
-
-## Five Pillars of ReIG Theory
-
-```text
-    Ψ          R         d_R        H_R         L
- Meaning   Resonance    ReIG    Hamiltonian  Lagrangian
-  Field    Operator    Metric
-```
+| v3 | Jan 2026 | CPTP-oriented work, time operators, theorem system |
+| v4 | Feb–Mar 2026 | 8-operator semigroup, phase-transition work, SRRFT, consolidated framework |
+| v5 | Jul 2026 | revised integrated ReIG2/twinRIG context |
+| **v2026.08-dq** | **Aug 2026** | **ReIG-DQ audited mathematical core, bilingual frozen manuscripts, verification lineage, publication architecture, ReIG3/B2OL indexing** |
 
 ## Release Notes
 
-- [August 2026 ReIG-DQ update inventory](updates/2026-08-reig-dq-update.md)
+- [August 2026 update inventory](updates/2026-08-reig-dq-update.md)
 - [Zenodo release notes](ZENODO_RELEASE_NOTES_2026-08.md)
 - [GitHub release notes](releases/v2026.08-dq/RELEASE_NOTES.md)
 
