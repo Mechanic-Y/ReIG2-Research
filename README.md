@@ -8,8 +8,9 @@
 
 ## Current Update
 
-**Latest repository update candidate:** `v2026.08-dq`  
+**Latest repository release:** `v2026.08-dq`  
 **Theme:** ReIG-DQ and Publication Architecture Update  
+**Zenodo DOI:** [10.5281/zenodo.21960025](https://doi.org/10.5281/zenodo.21960025)  
 **Previous public repository state:** February–March 2026 ReIG2/ReIG3 consolidation
 
 This update records the post-March 2026 expansion of the project from a ReIG2/ReIG3 theory repository into a more public, auditable, and release-oriented research architecture. The main addition is **ReIG-DQ**, a documentation-quality / publication-architecture layer for freezing, auditing, and citing ReIG-related artifacts.
@@ -41,6 +42,7 @@ ReIG2-Research/
 │   └── v2026.08-dq/
 │       ├── MANIFEST_v2026.08-dq.md
 │       ├── SHA256SUMS.txt
+│       ├── RELEASE_NOTES.md
 │       └── release_assets/
 │           ├── ReIG_DQ_Japanese_Manuscript_v1.1_BIBLIOGRAPHY_FROZEN.pdf
 │           ├── ReIG_DQ_English_Manuscript_v1.0_SYNCHRONIZED_FROZEN.pdf
@@ -190,7 +192,8 @@ Strength = lim_{t→∞} ∫₀ᵗ Feasibility(τ) dτ
 ## Release Notes
 
 - [August 2026 ReIG-DQ update inventory](updates/2026-08-reig-dq-update.md)
-- [Zenodo release notes draft](ZENODO_RELEASE_NOTES_2026-08.md)
+- [Zenodo release notes](ZENODO_RELEASE_NOTES_2026-08.md)
+- [GitHub release notes](releases/v2026.08-dq/RELEASE_NOTES.md)
 
 ## AI Assistance Notice
 
@@ -209,4 +212,4 @@ MIT License
 
 - Portal: [mechanic-y.github.io/ReIG2-Research](https://mechanic-y.github.io/ReIG2-Research/)
 - GitHub: [github.com/Mechanic-Y/ReIG2-Research](https://github.com/Mechanic-Y/ReIG2-Research)
-- Zenodo: pending / update after DOI verification
+- Zenodo DOI: [10.5281/zenodo.21960025](https://doi.org/10.5281/zenodo.21960025)
