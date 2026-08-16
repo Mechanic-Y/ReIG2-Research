@@ -32,40 +32,76 @@ ReIG-DQ is not a replacement for the above phases. It is a **publication and ver
 
 ```text
 ReIG2-Research/
-├── README.md                         ← You are here
-├── index.html                        ← Portal site (GitHub Pages)
-├── .zenodo.json                      ← Zenodo metadata for release integration
-├── ZENODO_RELEASE_NOTES_2026-08.md   ← Draft release notes for the August 2026 update
+├── README.md
+├── index.html
+├── .zenodo.json
+├── ZENODO_RELEASE_NOTES_2026-08.md
 │
-├── updates/
-│   └── 2026-08-reig-dq-update.md     ← Post-March 2026 ReIG-related update inventory
+├── releases/
+│   └── v2026.08-dq/
+│       ├── MANIFEST_v2026.08-dq.md
+│       ├── SHA256SUMS.txt
+│       └── release_assets/
+│           ├── ReIG_DQ_Japanese_Manuscript_v1.1_BIBLIOGRAPHY_FROZEN.pdf
+│           ├── ReIG_DQ_English_Manuscript_v1.0_SYNCHRONIZED_FROZEN.pdf
+│           ├── ReIG2_twinRIG_July2026_Revised_Integrated_v1.1.pdf
+│           ├── Paper1_JA_v3.pdf
+│           └── Paper1_EN_v3.pdf
 │
-├── ReIG2/                            ← Current framework
+├── ReIG-DQ/
+│   ├── README.md
 │   ├── papers/
-│   │   ├── v1_2025-11/              Initial formulation
-│   │   ├── v2_2025-12/              twinRIG integration
-│   │   ├── v3_2026-01/              CPTP unification
-│   │   └── v4_2026-02-03/           Resonance operator theory, SRRFT, consolidated framework
-│   ├── code/
-│   │   ├── ReIG_Framework_Consolidated/
-│   │   ├── SRRFT/
-│   │   ├── reig2_resonance/          8-operator semigroup implementation
-│   │   ├── LLM_implementation/
-│   │   ├── Simulation_type/
-│   │   └── core/ (v1, v2)
+│   │   └── v1_2026-08/
+│   │       ├── ja/
+│   │       └── en/
+│   ├── audit/
+│   │   ├── identity_bridge/
+│   │   ├── freeze_notes/
+│   │   └── hash_ledgers/
 │   └── docs/
 │
-├── ReIG3/                            ← Resonant Intelligence Grid
+├── ReIG2/
+│   ├── papers/
+│   │   ├── v1_2025-11/
+│   │   ├── v2_2025-12/
+│   │   ├── v3_2026-01/
+│   │   ├── v4_2026-02-03/
+│   │   └── v5_2026-07/
+│   ├── code/
+│   └── docs/
+│
+├── ReIG3/
+│   ├── papers/
+│   │   └── phase-a_three-rationality_2026-04/
+│   │       ├── ja/
+│   │       └── en/
+│   ├── code/
+│   └── docs/
+│
+├── applications/
+│   ├── B2OL/
+│   │   ├── README.md
+│   │   └── status.md
+│   ├── IMP-Ops/
+│   │   ├── README.md
+│   │   └── status.md
+│   └── Deployment/
+│       ├── README.md
+│       └── status.md
+│
+├── experimental-notes/
+│   └── ACFM/
+│       ├── README.md
+│       └── status.md
+│
+├── RIF/
 │   ├── papers/
 │   └── code/
 │
-├── RIF/                              ← Resonant Intelligence Field
-│   ├── papers/
-│   └── code/
-│
-└── shared/                           ← Common resources
+└── shared/
     ├── images/
-    └── references/
+    ├── references/
+    └── templates/
 ```
 
 ## Latest: v2026.08-dq — ReIG-DQ and Publication Architecture
